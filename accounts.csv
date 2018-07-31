@@ -1,0 +1,8 @@
+id,user_id,utility,type,account_number
+1,1,pepco,residential,2349-23422
+2,2,duke_energy,commercial,43332234
+3,2,duke_energy,residential,86940293
+4,3,dominion,residential,9565-434-43534
+5,3,dominion,residential,9565-430-54933
+6,4,pepco,commercial,8654-35434
+7,5,dominion,residential,9566-938-21493

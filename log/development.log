@@ -1,0 +1,1410 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233007"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20180730233652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "type" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233652"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" decimal, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_79e8aa9e27"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730235143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 01:21:55.269698"], ["updated_at", "2018-07-31 01:21:55.269698"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "bills"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730235143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20180730233652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "accounts"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730233652"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730233007"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233007"]]
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20180730233652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "type" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233652"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_79e8aa9e27"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730235143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ingrid"], ["last_name", "Wong"], ["email", "ingrid830715@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 01:27:21.542543"], ["updated_at", "2018-07-31 01:27:21.542543"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "bills"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730235143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20180730233652)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "accounts"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730233652"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180730233007"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20180730233007)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180730233007_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233007"]]
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAccounts (20180730233652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b1e30bebc8"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/migrate/20180730233652_create_accounts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730233652"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateBills (20180730235143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_79e8aa9e27"
+FOREIGN KEY ("account_id")
+  REFERENCES "accounts" ("id")
+)[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/migrate/20180730235143_create_bills.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180730235143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "ingrid"], ["last_name", "wong"], ["email", "ingrid830715@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 01:33:39.353415"], ["updated_at", "2018-07-31 01:33:39.353415"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "residential"], ["account_number", "12345"], ["user_id", 1], ["created_at", "2018-07-31 01:34:09.413212"], ["updated_at", "2018-07-31 01:34:09.413212"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "-4712-01-01"], ["end_date", "-4712-01-02"], ["usage", 123], ["charges", 12.52], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 01:35:53.575822"], ["updated_at", "2018-07-31 01:35:53.575822"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? ORDER BY "bills"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? ORDER BY "bills"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id", "first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["first_name", "mary"], ["last_name", "smith"], ["email", "mary.smith@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:09:07.917602"], ["updated_at", "2018-07-31 02:09:07.917602"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "mary"], ["last_name", "smith"], ["email", "mary.smith@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:10:52.475760"], ["updated_at", "2018-07-31 02:10:52.475760"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "john"], ["last_name", "johnson"], ["email", "john.johnson@yahoo.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:10:52.487225"], ["updated_at", "2018-07-31 02:10:52.487225"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "sam"], ["last_name", "andrews"], ["email", "sam1234@msn.com"], ["status", "active"], ["created_at", "2018-07-31 02:10:52.493247"], ["updated_at", "2018-07-31 02:10:52.493247"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "matthew"], ["last_name", "freeman"], ["email", "mfreeman@gmail.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:10:52.499818"], ["updated_at", "2018-07-31 02:10:52.499818"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Natalie"], ["last_name", "Berry"], ["email", "natberry@hotmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:10:52.504752"], ["updated_at", "2018-07-31 02:10:52.504752"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "residential"], ["account_number", "2349-23422"], ["user_id", 1], ["created_at", "2018-07-31 02:20:50.486200"], ["updated_at", "2018-07-31 02:20:50.486200"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "commercial"], ["account_number", "43332234"], ["user_id", 2], ["created_at", "2018-07-31 02:20:50.490458"], ["updated_at", "2018-07-31 02:20:50.490458"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "residential"], ["account_number", "86940293"], ["user_id", 2], ["created_at", "2018-07-31 02:20:50.494262"], ["updated_at", "2018-07-31 02:20:50.494262"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-434-43534"], ["user_id", 3], ["created_at", "2018-07-31 02:20:50.502211"], ["updated_at", "2018-07-31 02:20:50.502211"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-430-54933"], ["user_id", 3], ["created_at", "2018-07-31 02:20:50.507609"], ["updated_at", "2018-07-31 02:20:50.507609"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "8654-35434"], ["user_id", 4], ["created_at", "2018-07-31 02:20:50.510954"], ["updated_at", "2018-07-31 02:20:50.510954"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9566-938-21493"], ["user_id", 5], ["created_at", "2018-07-31 02:20:50.514857"], ["updated_at", "2018-07-31 02:20:50.514857"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Load (1.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:21:39.843771"], ["updated_at", "2018-07-31 02:21:39.843771"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:21:39.871680"], ["updated_at", "2018-07-31 02:21:39.871680"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-07-31 02:21:39.874423"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "mary"], ["last_name", "smith"], ["email", "mary.smith@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:25:09.253912"], ["updated_at", "2018-07-31 02:25:09.253912"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "john"], ["last_name", "johnson"], ["email", "john.johnson@yahoo.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:25:09.261006"], ["updated_at", "2018-07-31 02:25:09.261006"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "sam"], ["last_name", "andrews"], ["email", "sam1234@msn.com"], ["status", "active"], ["created_at", "2018-07-31 02:25:09.264359"], ["updated_at", "2018-07-31 02:25:09.264359"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "matthew"], ["last_name", "freeman"], ["email", "mfreeman@gmail.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:25:09.268553"], ["updated_at", "2018-07-31 02:25:09.268553"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Natalie"], ["last_name", "Berry"], ["email", "natberry@hotmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:25:09.272286"], ["updated_at", "2018-07-31 02:25:09.272286"]]
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (6.1ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "residential"], ["account_number", "2349-23422"], ["user_id", 1], ["created_at", "2018-07-31 02:25:13.669217"], ["updated_at", "2018-07-31 02:25:13.669217"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "commercial"], ["account_number", "43332234"], ["user_id", 2], ["created_at", "2018-07-31 02:25:13.679377"], ["updated_at", "2018-07-31 02:25:13.679377"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "residential"], ["account_number", "86940293"], ["user_id", 2], ["created_at", "2018-07-31 02:25:13.683414"], ["updated_at", "2018-07-31 02:25:13.683414"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.6ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-434-43534"], ["user_id", 3], ["created_at", "2018-07-31 02:25:13.689837"], ["updated_at", "2018-07-31 02:25:13.689837"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-430-54933"], ["user_id", 3], ["created_at", "2018-07-31 02:25:13.694611"], ["updated_at", "2018-07-31 02:25:13.694611"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "8654-35434"], ["user_id", 4], ["created_at", "2018-07-31 02:25:13.698063"], ["updated_at", "2018-07-31 02:25:13.698063"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9566-938-21493"], ["user_id", 5], ["created_at", "2018-07-31 02:25:13.701760"], ["updated_at", "2018-07-31 02:25:13.701760"]]
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (6.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-15"], ["end_date", "2018-02-16"], ["usage", 638], ["charges", 76.74], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:25:18.718690"], ["updated_at", "2018-07-31 02:25:18.718690"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-17"], ["end_date", "2017-03-17"], ["usage", 575], ["charges", 65.11], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:25:18.729530"], ["updated_at", "2018-07-31 02:25:18.729530"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-18"], ["end_date", "2017-04-15"], ["usage", 677], ["charges", 85.89], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:25:18.733835"], ["updated_at", "2018-07-31 02:25:18.733835"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-16"], ["end_date", "2017-05-17"], ["usage", 926], ["charges", 106.56], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:25:18.743310"], ["updated_at", "2018-07-31 02:25:18.743310"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-18"], ["end_date", "2017-06-17"], ["usage", 1045], ["charges", 141.92], ["status", "unpaid"], ["account_id", 1], ["created_at", "2018-07-31 02:25:18.747966"], ["updated_at", "2018-07-31 02:25:18.747966"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 229], ["charges", 28.44], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:25:18.753300"], ["updated_at", "2018-07-31 02:25:18.753300"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 301], ["charges", 35.51], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:25:18.764662"], ["updated_at", "2018-07-31 02:25:18.764662"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 280], ["charges", 31.99], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:25:18.769414"], ["updated_at", "2018-07-31 02:25:18.769414"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 324], ["charges", 36.75], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:25:18.773333"], ["updated_at", "2018-07-31 02:25:18.773333"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 219], ["charges", 27.47], ["status", "unpaid"], ["account_id", 2], ["created_at", "2018-07-31 02:25:18.777437"], ["updated_at", "2018-07-31 02:25:18.777437"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 92], ["charges", 10.53], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:25:18.781420"], ["updated_at", "2018-07-31 02:25:18.781420"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 427], ["charges", 55.38], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:25:18.786089"], ["updated_at", "2018-07-31 02:25:18.786089"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 344], ["charges", 40.0], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:25:18.791535"], ["updated_at", "2018-07-31 02:25:18.791535"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 331], ["charges", 38.85], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:25:18.795911"], ["updated_at", "2018-07-31 02:25:18.795911"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 210], ["charges", 26.25], ["status", "unpaid"], ["account_id", 3], ["created_at", "2018-07-31 02:25:18.801338"], ["updated_at", "2018-07-31 02:25:18.801338"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-15"], ["end_date", "2018-06-17"], ["usage", 1527], ["charges", 240.18], ["status", "unpaid"], ["account_id", 4], ["created_at", "2018-07-31 02:25:18.805102"], ["updated_at", "2018-07-31 02:25:18.805102"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-10"], ["end_date", "2018-03-09"], ["usage", 834], ["charges", 113.98], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:25:18.809068"], ["updated_at", "2018-07-31 02:25:18.809068"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-10"], ["end_date", "2018-04-10"], ["usage", 785], ["charges", 94.68], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:25:18.813580"], ["updated_at", "2018-07-31 02:25:18.813580"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-11"], ["end_date", "2018-05-09"], ["usage", 815], ["charges", 99.23], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:25:18.819527"], ["updated_at", "2018-07-31 02:25:18.819527"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-10"], ["end_date", "2018-06-11"], ["usage", 1123], ["charges", 157.32], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:25:18.823965"], ["updated_at", "2018-07-31 02:25:18.823965"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-09-02"], ["end_date", "2017-10-01"], ["usage", 345], ["charges", 47.34], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:25:18.828168"], ["updated_at", "2018-07-31 02:25:18.828168"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-10-02"], ["end_date", "2017-11-01"], ["usage", 642], ["charges", 91.6], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:25:18.833944"], ["updated_at", "2018-07-31 02:25:18.833944"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-02"], ["end_date", "2017-12-01"], ["usage", 934], ["charges", 128.93], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:25:18.840101"], ["updated_at", "2018-07-31 02:25:18.840101"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-24"], ["end_date", "2017-12-22"], ["usage", 152], ["charges", 28.14], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.844409"], ["updated_at", "2018-07-31 02:25:18.844409"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-23"], ["end_date", "2018-01-21"], ["usage", 113], ["charges", 15.82], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.849521"], ["updated_at", "2018-07-31 02:25:18.849521"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-22"], ["end_date", "2018-02-23"], ["usage", 127], ["charges", 18.11], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.854486"], ["updated_at", "2018-07-31 02:25:18.854486"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-24"], ["end_date", "2018-03-24"], ["usage", 112], ["charges", 13.19], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.858514"], ["updated_at", "2018-07-31 02:25:18.858514"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-25"], ["end_date", "2018-04-22"], ["usage", 465], ["charges", 52.22], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.862382"], ["updated_at", "2018-07-31 02:25:18.862382"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-23"], ["end_date", "2018-05-24"], ["usage", 523], ["charges", 61.03], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.867199"], ["updated_at", "2018-07-31 02:25:18.867199"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-25"], ["end_date", "2018-06-24"], ["usage", 545], ["charges", 67.57], ["status", "unpaid"], ["account_id", 7], ["created_at", "2018-07-31 02:25:18.872928"], ["updated_at", "2018-07-31 02:25:18.872928"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:32:24.195585"], ["updated_at", "2018-07-31 02:32:24.195585"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:32:24.230617"], ["updated_at", "2018-07-31 02:32:24.230617"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-07-31 02:32:24.233976"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "mary"], ["last_name", "smith"], ["email", "mary.smith@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:35:23.998563"], ["updated_at", "2018-07-31 02:35:23.998563"]]
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "john"], ["last_name", "johnson"], ["email", "john.johnson@yahoo.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:35:24.013624"], ["updated_at", "2018-07-31 02:35:24.013624"]]
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "sam"], ["last_name", "andrews"], ["email", "sam1234@msn.com"], ["status", "active"], ["created_at", "2018-07-31 02:35:24.016495"], ["updated_at", "2018-07-31 02:35:24.016495"]]
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "matthew"], ["last_name", "freeman"], ["email", "mfreeman@gmail.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:35:24.019492"], ["updated_at", "2018-07-31 02:35:24.019492"]]
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Natalie"], ["last_name", "Berry"], ["email", "natberry@hotmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:35:24.025336"], ["updated_at", "2018-07-31 02:35:24.025336"]]
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:17
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:38:08.499497"], ["updated_at", "2018-07-31 02:38:08.499497"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "accounts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "utility" varchar, "category" varchar, "account_number" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_accounts_on_user_id" ON "accounts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "bills"[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "bills" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start_date" date, "end_date" date, "usage" integer, "charges" float, "status" varchar, "account_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:25
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX "index_bills_on_account_id" ON "bills" ("account_id")[0m
+  ↳ db/schema.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "status" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:37
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180730235143)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20180730233007),
+(20180730233652);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-31 02:38:08.530524"], ["updated_at", "2018-07-31 02:38:08.530524"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-07-31 02:38:08.534847"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "mary"], ["last_name", "smith"], ["email", "mary.smith@gmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:38:19.984185"], ["updated_at", "2018-07-31 02:38:19.984185"]]
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "john"], ["last_name", "johnson"], ["email", "john.johnson@yahoo.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:38:19.995273"], ["updated_at", "2018-07-31 02:38:19.995273"]]
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "sam"], ["last_name", "andrews"], ["email", "sam1234@msn.com"], ["status", "active"], ["created_at", "2018-07-31 02:38:19.999168"], ["updated_at", "2018-07-31 02:38:19.999168"]]
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "matthew"], ["last_name", "freeman"], ["email", "mfreeman@gmail.com"], ["status", "inactive"], ["created_at", "2018-07-31 02:38:20.003528"], ["updated_at", "2018-07-31 02:38:20.003528"]]
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Natalie"], ["last_name", "Berry"], ["email", "natberry@hotmail.com"], ["status", "active"], ["created_at", "2018-07-31 02:38:20.006633"], ["updated_at", "2018-07-31 02:38:20.006633"]]
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (1.9ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "residential"], ["account_number", "2349-23422"], ["user_id", 1], ["created_at", "2018-07-31 02:42:11.230750"], ["updated_at", "2018-07-31 02:42:11.230750"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "commercial"], ["account_number", "43332234"], ["user_id", 2], ["created_at", "2018-07-31 02:42:11.236660"], ["updated_at", "2018-07-31 02:42:11.236660"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "residential"], ["account_number", "86940293"], ["user_id", 2], ["created_at", "2018-07-31 02:42:11.241117"], ["updated_at", "2018-07-31 02:42:11.241117"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-434-43534"], ["user_id", 3], ["created_at", "2018-07-31 02:42:11.247307"], ["updated_at", "2018-07-31 02:42:11.247307"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-430-54933"], ["user_id", 3], ["created_at", "2018-07-31 02:42:11.253234"], ["updated_at", "2018-07-31 02:42:11.253234"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "8654-35434"], ["user_id", 4], ["created_at", "2018-07-31 02:42:11.256920"], ["updated_at", "2018-07-31 02:42:11.256920"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[36mAccount Create (0.8ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9566-938-21493"], ["user_id", 5], ["created_at", "2018-07-31 02:42:11.261149"], ["updated_at", "2018-07-31 02:42:11.261149"]]
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (6.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-15"], ["end_date", "2018-02-16"], ["usage", 638], ["charges", 76.74], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:42:29.895811"], ["updated_at", "2018-07-31 02:42:29.895811"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-17"], ["end_date", "2017-03-17"], ["usage", 575], ["charges", 65.11], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:42:29.907233"], ["updated_at", "2018-07-31 02:42:29.907233"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-18"], ["end_date", "2017-04-15"], ["usage", 677], ["charges", 85.89], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:42:29.911671"], ["updated_at", "2018-07-31 02:42:29.911671"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.8ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-16"], ["end_date", "2017-05-17"], ["usage", 926], ["charges", 106.56], ["status", "paid"], ["account_id", 1], ["created_at", "2018-07-31 02:42:29.919171"], ["updated_at", "2018-07-31 02:42:29.919171"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-18"], ["end_date", "2017-06-17"], ["usage", 1045], ["charges", 141.92], ["status", "unpaid"], ["account_id", 1], ["created_at", "2018-07-31 02:42:29.924215"], ["updated_at", "2018-07-31 02:42:29.924215"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 229], ["charges", 28.44], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:42:29.933163"], ["updated_at", "2018-07-31 02:42:29.933163"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 301], ["charges", 35.51], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:42:29.937422"], ["updated_at", "2018-07-31 02:42:29.937422"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 280], ["charges", 31.99], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:42:29.941785"], ["updated_at", "2018-07-31 02:42:29.941785"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 324], ["charges", 36.75], ["status", "paid"], ["account_id", 2], ["created_at", "2018-07-31 02:42:29.945757"], ["updated_at", "2018-07-31 02:42:29.945757"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 219], ["charges", 27.47], ["status", "unpaid"], ["account_id", 2], ["created_at", "2018-07-31 02:42:29.949492"], ["updated_at", "2018-07-31 02:42:29.949492"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 92], ["charges", 10.53], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:42:29.953979"], ["updated_at", "2018-07-31 02:42:29.953979"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 427], ["charges", 55.38], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:42:29.957873"], ["updated_at", "2018-07-31 02:42:29.957873"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 344], ["charges", 40.0], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:42:29.961793"], ["updated_at", "2018-07-31 02:42:29.961793"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 331], ["charges", 38.85], ["status", "paid"], ["account_id", 3], ["created_at", "2018-07-31 02:42:29.965481"], ["updated_at", "2018-07-31 02:42:29.965481"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 210], ["charges", 26.25], ["status", "unpaid"], ["account_id", 3], ["created_at", "2018-07-31 02:42:29.969374"], ["updated_at", "2018-07-31 02:42:29.969374"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-15"], ["end_date", "2018-06-17"], ["usage", 1527], ["charges", 240.18], ["status", "unpaid"], ["account_id", 4], ["created_at", "2018-07-31 02:42:29.974041"], ["updated_at", "2018-07-31 02:42:29.974041"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-10"], ["end_date", "2018-03-09"], ["usage", 834], ["charges", 113.98], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:42:29.978627"], ["updated_at", "2018-07-31 02:42:29.978627"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-10"], ["end_date", "2018-04-10"], ["usage", 785], ["charges", 94.68], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:42:29.983302"], ["updated_at", "2018-07-31 02:42:29.983302"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-11"], ["end_date", "2018-05-09"], ["usage", 815], ["charges", 99.23], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:42:29.987418"], ["updated_at", "2018-07-31 02:42:29.987418"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-10"], ["end_date", "2018-06-11"], ["usage", 1123], ["charges", 157.32], ["status", "paid"], ["account_id", 5], ["created_at", "2018-07-31 02:42:29.991721"], ["updated_at", "2018-07-31 02:42:29.991721"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-09-02"], ["end_date", "2017-10-01"], ["usage", 345], ["charges", 47.34], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:42:29.995436"], ["updated_at", "2018-07-31 02:42:29.995436"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-10-02"], ["end_date", "2017-11-01"], ["usage", 642], ["charges", 91.6], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:42:29.999601"], ["updated_at", "2018-07-31 02:42:29.999601"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-02"], ["end_date", "2017-12-01"], ["usage", 934], ["charges", 128.93], ["status", "paid"], ["account_id", 6], ["created_at", "2018-07-31 02:42:30.004382"], ["updated_at", "2018-07-31 02:42:30.004382"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-24"], ["end_date", "2017-12-22"], ["usage", 152], ["charges", 28.14], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.008896"], ["updated_at", "2018-07-31 02:42:30.008896"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-23"], ["end_date", "2018-01-21"], ["usage", 113], ["charges", 15.82], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.012806"], ["updated_at", "2018-07-31 02:42:30.012806"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.3ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-22"], ["end_date", "2018-02-23"], ["usage", 127], ["charges", 18.11], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.019041"], ["updated_at", "2018-07-31 02:42:30.019041"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-24"], ["end_date", "2018-03-24"], ["usage", 112], ["charges", 13.19], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.023624"], ["updated_at", "2018-07-31 02:42:30.023624"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-25"], ["end_date", "2018-04-22"], ["usage", 465], ["charges", 52.22], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.027388"], ["updated_at", "2018-07-31 02:42:30.027388"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-23"], ["end_date", "2018-05-24"], ["usage", 523], ["charges", 61.03], ["status", "paid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.031329"], ["updated_at", "2018-07-31 02:42:30.031329"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-25"], ["end_date", "2018-06-24"], ["usage", 545], ["charges", 67.57], ["status", "unpaid"], ["account_id", 7], ["created_at", "2018-07-31 02:42:30.036600"], ["updated_at", "2018-07-31 02:42:30.036600"]]
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:35
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
