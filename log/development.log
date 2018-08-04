@@ -1408,3 +1408,175 @@ FOREIGN KEY ("account_id")
   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/mfreeman@gmail.com" for 127.0.0.1 at 2018-08-04 12:13:55 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as 
+  Parameters: {"id"=>"mfreeman@gmail", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=mfreeman@gmail):
+  
+app/controllers/users_controller.rb:48:in `set_user'
+Started GET "/users/" for 127.0.0.1 at 2018-08-04 12:14:51 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/mary.smith@gmail.com" for 127.0.0.1 at 2018-08-04 12:15:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/mary.smith@gmail.com"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-08-04 12:16:17 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sam1234@msn.com" for 127.0.0.1 at 2018-08-04 12:16:26 -0400
+Processing by UsersController#email as 
+  Parameters: {"email"=>"sam1234@msn", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sam1234@msn"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/users_controller.rb:42:in `email'
+Started GET "/users/sam1234@msn.com" for 127.0.0.1 at 2018-08-04 12:25:32 -0400
+Processing by UsersController#email as */*
+  Parameters: {"email"=>"sam1234@msn.com", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sam1234@msn.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 12:25:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 13:08:52 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.33ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `first_name' for #<UserSerializer:0x00007fcb2546eec8>):
+  
+app/serializers/user_serializer.rb:6:in `full_name'
+app/controllers/users_controller.rb:13:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 13:10:43 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (24.36ms)
+Completed 200 OK in 33ms (Views: 25.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 13:11:25 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (17.56ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `type' for #<Account:0x00007fcb25534268>):
+  
+app/controllers/users_controller.rb:13:in `show'
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 13:11:42 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.59ms)
+Completed 200 OK in 28ms (Views: 18.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-08-04 13:12:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.39ms)
+Completed 200 OK in 29ms (Views: 20.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-08-04 13:12:11 -0400
+Processing by AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:44
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (2.47ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/accounts/1" for 127.0.0.1 at 2018-08-04 13:12:54 -0400
+Processing by AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/accounts_controller.rb:44
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:13
+[active_model_serializers]   [1m[36mBill Load (0.9ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (32.92ms)
+Completed 200 OK in 41ms (Views: 32.6ms | ActiveRecord: 2.8ms)
+
+
