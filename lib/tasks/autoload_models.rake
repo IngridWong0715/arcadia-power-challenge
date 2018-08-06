@@ -4,9 +4,12 @@ namespace :import do
   desc "Import users from csv"
   task users: :environment do
     path = Rails.root.join("users.csv")
+    password='mot_de_passe'
     CSV.foreach(path, headers: true) do |row|
       row_without_id = row.to_hash
       row_without_id.delete("id")
+      row_without_id[:password] = password
+      row_without_id[:password_confirmation] = password
       User.create!(row_without_id)
     end
   end
