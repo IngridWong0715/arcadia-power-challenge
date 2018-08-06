@@ -1,4 +1,8 @@
 class BillSerializer < ActiveModel::Serializer
   belongs_to :account
-  attributes :start_date, :end_date, :usage, :charges, :status
+
+  attributes :id, :start_date, :end_date, :usage, :charges, :status
+
+  def user
+  end
 end

@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
   # GET /users/ingrid830715@gmail.com
   def email
-    @user = User.find_by!(email: params[:email])
+    @user = User.find_by_email! params[:email]
     render json: @user
   end
   private

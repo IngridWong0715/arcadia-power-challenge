@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #User ActiveModel Serializer to generate object-oriented JSON
 gem 'active_model_serializers', '~> 0.10.2'
 
+
+# Use devise and jwt for authentication
+gem 'devise', '~> 4.2'
+gem 'jwt', '~> 2.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
