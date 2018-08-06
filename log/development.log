@@ -2449,3 +2449,1020 @@ Processing by Devise::RegistrationsController#new as HTML
 Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/home" for 127.0.0.1 at 2018-08-06 14:38:12 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as */*
+  Parameters: {"home"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 52ms (Views: 15.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:24:27 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mBill Load (1.0ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/bills_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 195685ms (Views: 42.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:27:51 -0400
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/bills_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 2673ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-08-06 15:28:08 -0400
+Processing by HomeController#index as */*
+  Parameters: {"home"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_request! rendered or redirected
+Completed 401 Unauthorized in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-08-06 15:29:34 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as */*
+  Parameters: {"home"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Filter chain halted as :authenticate_request! rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2018-08-06 15:29:38 -0400
+Processing by HomeController#index as */*
+  Parameters: {"home"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 34ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:29:44 -0400
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/bills_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+Completed 200 OK in 2495ms (Views: 13.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:30:30 -0400
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 2103ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:30:43 -0400
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authenticate_request! rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:30:55 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Filter chain halted as :authenticate_request! rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 6.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bills" for 127.0.0.1 at 2018-08-06 15:31:01 -0400
+Processing by BillsController#index as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.96ms)
+Completed 200 OK in 7625ms (Views: 20.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2018-08-06 15:46:19 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/bills/1"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customer/bills/1" for 127.0.0.1 at 2018-08-06 15:46:29 -0400
+Processing by Admin::BillsController#show as */*
+  Parameters: {"id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/bills_controller.rb:44
+Completed 404 Not Found in 32ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=1):
+  
+app/controllers/admin/bills_controller.rb:44:in `set_bill'
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.8ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "residential"], ["account_number", "2349-23422"], ["user_id", 1], ["created_at", "2018-08-06 19:47:08.909176"], ["updated_at", "2018-08-06 19:47:08.909176"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "commercial"], ["account_number", "43332234"], ["user_id", 2], ["created_at", "2018-08-06 19:47:08.913693"], ["updated_at", "2018-08-06 19:47:08.913693"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "duke_energy"], ["category", "residential"], ["account_number", "86940293"], ["user_id", 2], ["created_at", "2018-08-06 19:47:08.917221"], ["updated_at", "2018-08-06 19:47:08.917221"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-434-43534"], ["user_id", 3], ["created_at", "2018-08-06 19:47:08.921758"], ["updated_at", "2018-08-06 19:47:08.921758"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9565-430-54933"], ["user_id", 3], ["created_at", "2018-08-06 19:47:08.926494"], ["updated_at", "2018-08-06 19:47:08.926494"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "8654-35434"], ["user_id", 4], ["created_at", "2018-08-06 19:47:08.933042"], ["updated_at", "2018-08-06 19:47:08.933042"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "dominion"], ["category", "residential"], ["account_number", "9566-938-21493"], ["user_id", 5], ["created_at", "2018-08-06 19:47:08.937526"], ["updated_at", "2018-08-06 19:47:08.937526"]]
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-15"], ["end_date", "2018-02-16"], ["usage", 638], ["charges", 76.74], ["status", "paid"], ["account_id", 1], ["created_at", "2018-08-06 19:47:15.598533"], ["updated_at", "2018-08-06 19:47:15.598533"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-17"], ["end_date", "2017-03-17"], ["usage", 575], ["charges", 65.11], ["status", "paid"], ["account_id", 1], ["created_at", "2018-08-06 19:47:15.609958"], ["updated_at", "2018-08-06 19:47:15.609958"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-18"], ["end_date", "2017-04-15"], ["usage", 677], ["charges", 85.89], ["status", "paid"], ["account_id", 1], ["created_at", "2018-08-06 19:47:15.614290"], ["updated_at", "2018-08-06 19:47:15.614290"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-16"], ["end_date", "2017-05-17"], ["usage", 926], ["charges", 106.56], ["status", "paid"], ["account_id", 1], ["created_at", "2018-08-06 19:47:15.619731"], ["updated_at", "2018-08-06 19:47:15.619731"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.9ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-18"], ["end_date", "2017-06-17"], ["usage", 1045], ["charges", 141.92], ["status", "unpaid"], ["account_id", 1], ["created_at", "2018-08-06 19:47:15.627039"], ["updated_at", "2018-08-06 19:47:15.627039"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 229], ["charges", 28.44], ["status", "paid"], ["account_id", 2], ["created_at", "2018-08-06 19:47:15.632841"], ["updated_at", "2018-08-06 19:47:15.632841"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 301], ["charges", 35.51], ["status", "paid"], ["account_id", 2], ["created_at", "2018-08-06 19:47:15.637942"], ["updated_at", "2018-08-06 19:47:15.637942"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 280], ["charges", 31.99], ["status", "paid"], ["account_id", 2], ["created_at", "2018-08-06 19:47:15.643093"], ["updated_at", "2018-08-06 19:47:15.643093"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 324], ["charges", 36.75], ["status", "paid"], ["account_id", 2], ["created_at", "2018-08-06 19:47:15.649956"], ["updated_at", "2018-08-06 19:47:15.649956"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 219], ["charges", 27.47], ["status", "unpaid"], ["account_id", 2], ["created_at", "2018-08-06 19:47:15.654766"], ["updated_at", "2018-08-06 19:47:15.654766"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-08"], ["end_date", "2018-01-07"], ["usage", 92], ["charges", 10.53], ["status", "paid"], ["account_id", 3], ["created_at", "2018-08-06 19:47:15.659494"], ["updated_at", "2018-08-06 19:47:15.659494"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-08"], ["end_date", "2018-02-07"], ["usage", 427], ["charges", 55.38], ["status", "paid"], ["account_id", 3], ["created_at", "2018-08-06 19:47:15.664074"], ["updated_at", "2018-08-06 19:47:15.664074"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-08"], ["end_date", "2018-03-07"], ["usage", 344], ["charges", 40.0], ["status", "paid"], ["account_id", 3], ["created_at", "2018-08-06 19:47:15.669470"], ["updated_at", "2018-08-06 19:47:15.669470"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-08"], ["end_date", "2018-04-07"], ["usage", 331], ["charges", 38.85], ["status", "paid"], ["account_id", 3], ["created_at", "2018-08-06 19:47:15.675564"], ["updated_at", "2018-08-06 19:47:15.675564"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-08"], ["end_date", "2018-05-07"], ["usage", 210], ["charges", 26.25], ["status", "unpaid"], ["account_id", 3], ["created_at", "2018-08-06 19:47:15.682978"], ["updated_at", "2018-08-06 19:47:15.682978"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.9ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-15"], ["end_date", "2018-06-17"], ["usage", 1527], ["charges", 240.18], ["status", "unpaid"], ["account_id", 4], ["created_at", "2018-08-06 19:47:15.688441"], ["updated_at", "2018-08-06 19:47:15.688441"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-10"], ["end_date", "2018-03-09"], ["usage", 834], ["charges", 113.98], ["status", "paid"], ["account_id", 5], ["created_at", "2018-08-06 19:47:15.694523"], ["updated_at", "2018-08-06 19:47:15.694523"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-10"], ["end_date", "2018-04-10"], ["usage", 785], ["charges", 94.68], ["status", "paid"], ["account_id", 5], ["created_at", "2018-08-06 19:47:15.699397"], ["updated_at", "2018-08-06 19:47:15.699397"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.7ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-11"], ["end_date", "2018-05-09"], ["usage", 815], ["charges", 99.23], ["status", "paid"], ["account_id", 5], ["created_at", "2018-08-06 19:47:15.704993"], ["updated_at", "2018-08-06 19:47:15.704993"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-10"], ["end_date", "2018-06-11"], ["usage", 1123], ["charges", 157.32], ["status", "paid"], ["account_id", 5], ["created_at", "2018-08-06 19:47:15.709927"], ["updated_at", "2018-08-06 19:47:15.709927"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-09-02"], ["end_date", "2017-10-01"], ["usage", 345], ["charges", 47.34], ["status", "paid"], ["account_id", 6], ["created_at", "2018-08-06 19:47:15.714056"], ["updated_at", "2018-08-06 19:47:15.714056"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-10-02"], ["end_date", "2017-11-01"], ["usage", 642], ["charges", 91.6], ["status", "paid"], ["account_id", 6], ["created_at", "2018-08-06 19:47:15.723254"], ["updated_at", "2018-08-06 19:47:15.723254"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-02"], ["end_date", "2017-12-01"], ["usage", 934], ["charges", 128.93], ["status", "paid"], ["account_id", 6], ["created_at", "2018-08-06 19:47:15.727405"], ["updated_at", "2018-08-06 19:47:15.727405"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-11-24"], ["end_date", "2017-12-22"], ["usage", 152], ["charges", 28.14], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.731535"], ["updated_at", "2018-08-06 19:47:15.731535"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2017-12-23"], ["end_date", "2018-01-21"], ["usage", 113], ["charges", 15.82], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.736550"], ["updated_at", "2018-08-06 19:47:15.736550"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-01-22"], ["end_date", "2018-02-23"], ["usage", 127], ["charges", 18.11], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.741061"], ["updated_at", "2018-08-06 19:47:15.741061"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-24"], ["end_date", "2018-03-24"], ["usage", 112], ["charges", 13.19], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.745108"], ["updated_at", "2018-08-06 19:47:15.745108"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-03-25"], ["end_date", "2018-04-22"], ["usage", 465], ["charges", 52.22], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.749364"], ["updated_at", "2018-08-06 19:47:15.749364"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.6ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-04-23"], ["end_date", "2018-05-24"], ["usage", 523], ["charges", 61.03], ["status", "paid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.754741"], ["updated_at", "2018-08-06 19:47:15.754741"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[36mBill Create (0.4ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-05-25"], ["end_date", "2018-06-24"], ["usage", 545], ["charges", 67.57], ["status", "unpaid"], ["account_id", 7], ["created_at", "2018-08-06 19:47:15.759335"], ["updated_at", "2018-08-06 19:47:15.759335"]]
+  ↳ lib/tasks/autoload_models.rake:34
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ lib/tasks/autoload_models.rake:34
+Started GET "/customer/bills/1" for 127.0.0.1 at 2018-08-06 15:47:20 -0400
+Processing by Admin::BillsController#show as */*
+  Parameters: {"id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admin/bills_controller.rb:44
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/admin/bills_controller.rb:13
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (15.08ms)
+Completed 200 OK in 76ms (Views: 58.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customer/bills/5" for 127.0.0.1 at 2018-08-06 15:47:36 -0400
+Processing by Admin::BillsController#show as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/admin/bills_controller.rb:44
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/admin/bills_controller.rb:13
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (1.92ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customer/bills/5/pay" for 127.0.0.1 at 2018-08-06 15:47:41 -0400
+  
+AbstractController::ActionNotFound (The action 'pay' could not be found for Admin::BillsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customer/bills/5/pay" for 127.0.0.1 at 2018-08-06 15:53:41 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Admin::BillsController#pay as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 39ms (Views: 9.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customer/bills/5" for 127.0.0.1 at 2018-08-06 16:00:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/customer/bills/5"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/bills/5" for 127.0.0.1 at 2018-08-06 16:00:55 -0400
+  
+ActionController::RoutingError (uninitialized constant Customer):
+  
+app/controllers/bills_controller.rb:1:in `<main>'
+Started GET "/bills/5" for 127.0.0.1 at 2018-08-06 16:01:11 -0400
+Processing by BillsController#show as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:13
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (16.83ms)
+Completed 200 OK in 60ms (Views: 35.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/bills/5" for 127.0.0.1 at 2018-08-06 16:01:32 -0400
+Processing by BillsController#show as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:13
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (1.5ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/bills/5/pay" for 127.0.0.1 at 2018-08-06 16:01:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/bills/5/pay"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/bills/5/pay" for 127.0.0.1 at 2018-08-06 16:02:03 -0400
+Processing by BillsController#pay as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/bills_controller.rb:42:in `pay'
+Started PATCH "/bills/5/pay" for 127.0.0.1 at 2018-08-06 16:03:25 -0400
+Processing by BillsController#pay as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bills_controller.rb:42
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:42
+  [1m[36mBill Update (8.2ms)[0m  [1m[33mUPDATE "bills" SET "status" = ?, "updated_at" = ? WHERE "bills"."id" = ?[0m  [["status", "paid"], ["updated_at", "2018-08-06 20:03:25.457001"], ["id", 5]]
+  ↳ app/controllers/bills_controller.rb:42
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bills_controller.rb:42
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (1.37ms)
+Completed 200 OK in 49ms (Views: 2.6ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/bills/5" for 127.0.0.1 at 2018-08-06 16:03:42 -0400
+Processing by BillsController#show as */*
+  Parameters: {"id"=>"5", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:13
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (1.81ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/bills/view_period" for 127.0.0.1 at 2018-08-06 16:11:23 -0400
+Processing by BillsController#show as */*
+  Parameters: {"id"=>"view_period", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:58
+Completed 404 Not Found in 17ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=view_period):
+  
+app/controllers/bills_controller.rb:58:in `set_bill'
+Started GET "/bills/view_period" for 127.0.0.1 at 2018-08-06 16:11:50 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_period", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.19ms)
+Completed 200 OK in 32ms (Views: 13.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/bills/view_period" for 127.0.0.1 at 2018-08-06 16:12:06 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_period", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 200 OK in 91334ms (Views: 6.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bills/view_period" for 127.0.0.1 at 2018-08-06 16:13:42 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_period", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.11ms)
+Completed 200 OK in 60473ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:14:45 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 80971ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:16:10 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? LIMIT ?[0m  [["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ (pry):6
+  [1m[36mCACHE Bill Load (0.0ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? LIMIT ?[0m  [["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers]   [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (19.22ms)
+Completed 200 OK in 434849ms (Views: 33.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:23:27 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? LIMIT ?[0m  [["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (13.14ms)
+Completed 200 OK in 48ms (Views: 13.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:23:46 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? LIMIT ?[0m  [["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:53
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (13.22ms)
+Completed 200 OK in 221735ms (Views: 30.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:27:31 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" = ? LIMIT ?[0m  [["user_id", 1], ["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (13.41ms)
+Completed 200 OK in 63ms (Views: 15.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/bills/2018-05-18" for 127.0.0.1 at 2018-08-06 16:27:56 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"2018-05-18", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" = ? LIMIT ?[0m  [["user_id", 1], ["start_date", "2018-05-18"], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (10.28ms)
+Completed 200 OK in 50ms (Views: 11.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2018-08-06 16:28:21 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 14ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2018-08-06 16:28:35 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:52
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 27ms (Views: 2.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/bills/1" for 127.0.0.1 at 2018-08-06 16:28:46 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:53
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 31ms (Views: 2.9ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/bills/1/pay" for 127.0.0.1 at 2018-08-06 16:29:19 -0400
+Processing by BillsController#pay as */*
+  Parameters: {"id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:60
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):13
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):13
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/bills_controller.rb:61
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/bills_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/bills_controller.rb:44
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (3.43ms)
+Completed 200 OK in 72009ms (Views: 32.8ms | ActiveRecord: 3.7ms)
+
+
+Started PATCH "/bills/7/pay" for 127.0.0.1 at 2018-08-06 16:30:35 -0400
+Processing by BillsController#pay as */*
+  Parameters: {"id"=>"7", "bill"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:60
+Completed 404 Not Found in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=7 [WHERE "accounts"."user_id" = ?]):
+  
+app/controllers/bills_controller.rb:60:in `set_bill'
+Started PATCH "/bills/7/pay" for 127.0.0.1 at 2018-08-06 16:31:02 -0400
+Processing by BillsController#pay as */*
+  Parameters: {"id"=>"7", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["user_id", 1], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:60
+Completed 404 Not Found in 23ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=7 [WHERE "accounts"."user_id" = ?]):
+  
+app/controllers/bills_controller.rb:60:in `set_bill'
+Started GET "/accounts" for 127.0.0.1 at 2018-08-06 17:01:14 -0400
+Processing by AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `all' for #<User:0x00007fca7b454c30>):
+  
+app/controllers/accounts_controller.rb:6:in `index'
+Started GET "/accounts" for 127.0.0.1 at 2018-08-06 17:02:23 -0400
+Processing by AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/accounts_controller.rb:8
+[active_model_serializers]   [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.63ms)
+Completed 200 OK in 44ms (Views: 26.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/auth_user?email=john.johnsono@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-06 17:03:34 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"john.johnsono@gmail.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "john.johnsono@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:5:in `authenticate_user'
+Started POST "/auth_user?email=john.johnsono@yahoo.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-06 17:03:55 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"john.johnsono@yahoo.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "john.johnsono@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:5:in `authenticate_user'
+Started POST "/auth_user?email=john.johnson@yahoo.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-06 17:04:05 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"john.johnson@yahoo.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "john.johnson@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:4
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 151ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/accounts" for 127.0.0.1 at 2018-08-06 17:04:27 -0400
+Processing by AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/accounts_controller.rb:8
+[active_model_serializers]   [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 2]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:8
+[active_model_serializers]   [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 3]]
+[active_model_serializers]   ↳ app/controllers/accounts_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.13ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:13:17 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:49
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.04ms)
+Completed 200 OK in 21ms (Views: 2.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:13:28 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:49
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.05ms)
+Completed 200 OK in 32ms (Views: 3.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:14:32 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:49
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 50ms (Views: 5.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:14:49 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:49
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.17ms)
+Completed 200 OK in 74ms (Views: 15.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:16:26 -0400
+Processing by BillsController#view_period as */*
+  Parameters: {"period"=>"view_unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."start_date" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/bills_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 29915ms (Views: 3.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/bills/view_unpaid" for 127.0.0.1 at 2018-08-06 17:16:59 -0400
+Processing by BillsController#view_unpaid as */*
+  Parameters: {"bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."status" = ?[0m  [["user_id", 2], ["status", "unpaid"]]
+  ↳ app/controllers/bills_controller.rb:55
+  [1m[36mCACHE Bill Load (0.0ms)[0m  [1m[34mSELECT "bills".* FROM "bills" INNER JOIN "accounts" ON "bills"."account_id" = "accounts"."id" WHERE "accounts"."user_id" = ? AND "bills"."status" = ?[0m  [["user_id", 2], ["status", "unpaid"]]
+  ↳ app/controllers/bills_controller.rb:57
+[active_model_serializers]   [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:57
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/bills_controller.rb:57
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.21ms)
+Completed 200 OK in 18628ms (Views: 45.5ms | ActiveRecord: 3.2ms)
+
+

@@ -1,10 +1,9 @@
 class BillsController < ApplicationController
-  before_action :set_bill, only: [:show, :update, :destroy]
+  before_action :set_bill, only: [:show, :update, :destroy, :pay]
 
   # GET /bills
   def index
-    @bills = Bill.all
-
+    @bills = @current_user.bills
     render json: @bills
   end
 
@@ -13,9 +12,9 @@ class BillsController < ApplicationController
     render json: @bill
   end
 
-  # POST /bills
+  # POST /bills THIS DOESN"T MAKE SENSE!! DELETE
   def create
-    @bill = Bill.new(bill_params)
+    @bill = @current_user.new(bill_params)
 
     if @bill.save
       render json: @bill, status: :created, location: @bill
@@ -24,7 +23,7 @@ class BillsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bills/1
+  # PATCH/PUT /bills/1 # A CUSTOMER SHOULDN"T BE ABLE TO UPDATE A BILL
   def update
     if @bill.update(bill_params)
       render json: @bill
@@ -33,19 +32,46 @@ class BillsController < ApplicationController
     end
   end
 
-  # DELETE /bills/1
+  # DELETE /bills/1 # A CUSTOMER SHOULDN"T BE ABLE TO UPDATE A BILL
   def destroy
     @bill.destroy
   end
 
+  def pay
+    if @bill.update(status: "paid")
+      render json: @bill
+    else
+      render json: @bill.errors, status: :unprocessable_entity
+    end
+  end
+
+  def by_period
+    @bills = @current_user.bills.find_by_start_date(params[:period])
+    render json: @bills
+  end
+
+  def unpaid
+    @bills = @current_user.bills.unpaid
+    render json: @bills
+  end
+
+  def paid
+    @bills = @current_user.bills.unpaid
+    render json: @bills
+  end
+
+  def stats
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bill
-      @bill = Bill.find(params[:id])
+      @bill = @current_user.bills.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def bill_params
-      params.require(:bill).permit(:start_date, :end_date, :usage, :charges, :status, :account_id)
+      params.require(:bill).permit(:start_date, :end_date, :usage, :charges, :status, :account_id, :period)
     end
 end
