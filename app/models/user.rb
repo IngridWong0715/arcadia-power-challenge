@@ -5,5 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :accounts
   has_many :bills, through: :accounts
-  
+
+  validates :status, presence: true
+  validates :status, inclusion: { in: %w(active inactive),
+   message: "%{value} must be active or inactive" }
+
+
 end

@@ -3466,3 +3466,69 @@ Processing by BillsController#view_unpaid as */*
 Completed 200 OK in 18628ms (Views: 45.5ms | ActiveRecord: 3.2ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ingr@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sdf"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sdf@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT MAX("bills"."usage") FROM "bills"[0m
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("bills"."usage") FROM "bills"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("bills"."usage") FROM "bills"[0m
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "bills"[0m
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."status" = ? LIMIT ?[0m  [["status", "paid"], ["LIMIT", 11]]
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (start_date = 1 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (start_date = '2018-01-14' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (start_date = '2018-01-15' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT * FROM bills
+     WHERE MONTH(start_date) = 1 AND YEAR(start_date) = 2018[0m
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT * FROM bills
+     WHERE MONTH(start_date) = 1 AS Month AND YEAR(start_date) = 2018[0m
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT * FROM bills
+     WHERE YEAR(start_date) = 2018[0m
+  [1m[36mBill Load (17.7ms)[0m  [1m[34mSELECT AVG(usage)
+FROM Bills[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT * FROM users WHERE first_name=John[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT * FROM users [0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM bills WHERE usage=638[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT * FROM bills WHERE MONTH(start_date)=2[0m
+  [1m[36mBill Load (1.8ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%m', start_date) as int) = 2) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT AVG(usage) FROM Bills WHERE cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 [0m
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT AVG(usage) FROM Bills [0m
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (SELECT * FROM Bills WHERE cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.7ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  [1m[36mBill Load (0.7ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAccount Load (0.7ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) LIMIT ?[0m  [["account_id", 1], ["LIMIT", 11]]
+  [1m[36mBill Load (1.0ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
