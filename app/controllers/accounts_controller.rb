@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update, :destroy]
+  rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
   # GET /accounts
   def index
@@ -38,10 +39,18 @@ class AccountsController < ApplicationController
     @account.destroy
   end
 
+
+  def stats
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_account
       @account = @current_user.accounts.find(params[:id])
+    end
+
+    def record_not_found
+      render json: {"Access Prohibited": "You don't have access to this account"}
     end
 
     # Only allow a trusted parameter "white list" through.
