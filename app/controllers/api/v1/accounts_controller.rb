@@ -51,11 +51,6 @@ module Api
           render json: { errors: ['Unable to find the requested data'] }, status: :not_found
         end
 
-        #A customer should only be able to UPDATE the STATUS to PAID
-        def bill_params
-          params.require(:bill).permit(:status)
-        end
-
         def account_params
           params.require(:account).permit(:utility, :category, :account_number, :user_id)
         end
