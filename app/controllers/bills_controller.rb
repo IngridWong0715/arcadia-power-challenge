@@ -9,11 +9,23 @@ class BillsController < ApplicationController
     render json: @bills
   end
 
+  def unpaid_bills
+    @unpaid_bills = @account.bills.unpaid
+    render json: @unpaid_bills
+  end
+
   def show
     render json: @bill
   end
 
-  def update
+  def monthly_bill
+    month = params[:start_date].split('-')[1]
+    year = params[:start_date].split('-')[0]
+    @bill = @account.bills.by_month(month, year)
+    render json: @bill
+  end
+
+  def update # pay bill
     if @bill.status == "paid"
       render json: {Error: "Bill has already been paid"}
     else
@@ -24,7 +36,6 @@ class BillsController < ApplicationController
       end
     end
   end
-
 
   private
 

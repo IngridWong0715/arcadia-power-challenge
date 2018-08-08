@@ -32,7 +32,6 @@ class AccountsController < ApplicationController
     end
   end
 
-
   def update
     if @account.update(account_params)
       render json: @account
@@ -46,45 +45,9 @@ class AccountsController < ApplicationController
   end
 
 
-  def billing_history
-    @bills = @account.bills
-    render json: @bills
-  end
 
-  def unpaid_bills
-    @unpaid_bills = @account.bills.unpaid
-    render json: @bills
-  end
-
-  def monthly_bill
-    month = params[:start_date].split('-')[1]
-    year = params[:start_date].split('-')[0]
-    @bill = @account.bills.by_month(month, year)
-    render json: @bill
-  end
-
-  def pay_bill #bill_id or start_date?
-    @bill = @account.bills.find(params[:bill_id])
-    if @bill.update(status: "paid")
-      render json: @bill
-    else
-      render json: @bill.errors, status: :unprocessable_entity
-    end
-  end
 
   private
-    # FOR FUTURE IMPLEMENTATION: SPLIT ANALYSIS INTO COMMERCIAL VS RESIDENTIAL
-    # def has_two_accounts
-    #   current_user.accounts.count == 2
-    # end
-    #
-    # def residential_account
-    #   current_user.accounts.find_by_category("residential")
-    # end
-    #
-    # def commercial_account
-    #   current_user.accounts.find_by_category("commercial")
-    # end
 
     def set_account
       @account = current_user.accounts.find_by_account_number(params[:account_number])
@@ -93,8 +56,6 @@ class AccountsController < ApplicationController
     def record_not_found
       render json: {"Access Prohibited": "You don't have access to this bill"}
     end
-
-
 
     #A customer should only be able to UPDATE the STATUS to PAID
     def bill_params

@@ -2,13 +2,11 @@ class Admin::BillsController < ApplicationController
   before_action :set_bill, only: [:show, :update, :destroy]
   rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
-  # GET /bills
   def index
     @bills = Bill.all
     render json: @bills
   end
 
-  # GET /bills/1
   def show
     render json: @bill
   end
