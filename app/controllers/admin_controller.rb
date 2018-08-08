@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 
     def authorize_admin_request!
       unless is_admin?
-        render json: { errors: ['Unauthorized Access: Must Be An Admin'] }, status: :unauthorized
+        render json: { errors: ['Unauthorized Access: Must Be An Admin'] }, status: :forbidden
       end
     end
 

@@ -30,7 +30,7 @@ module Api
 
       def update # pay bill
         if @bill.status == "paid"
-          render json: {Error: "Bill has already been paid"}
+          render json: { errors: ['Bill has already been paid'] }, status: :unprocessable_entity
         else
           if @bill.update(bill_params(:status))
             render json: @bill
@@ -55,7 +55,7 @@ module Api
         end
 
         def record_not_found
-          render json: {"Access Prohibited": "You don't have access to this bill"}
+          render json: { errors: ['Unable to find the requested data'] }, status: :not_found
         end
 
         def bill_params(*args)

@@ -4,17 +4,12 @@ module Api
       before_action :set_account, except: [:all_customer_accounts, :create_new_account]
       rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
-
       def index
         @accounts = current_user.accounts
         render json: @accounts
       end
 
       def show
-          #home page
-          # displays stats
-          # Monthly average:
-
         twelve_month_averages = Bill.twelve_month_averages
         customer_bills = prev_twelve_bills_usage(@account)
         comparison = {}
@@ -22,7 +17,6 @@ module Api
       end
 
       def create
-
         #WORK ON VALIDATION: a new account should only be created if it's unique for the user
         # (utility + account_number) combo must be unique
         @account = current_user.accounts.new(account_params)
@@ -47,8 +41,6 @@ module Api
       end
 
 
-
-
       private
 
         def set_account
@@ -56,7 +48,7 @@ module Api
         end
 
         def record_not_found
-          render json: {"Access Prohibited": "You don't have access to this bill"}
+          render json: { errors: ['Unable to find the requested data'] }, status: :not_found
         end
 
         #A customer should only be able to UPDATE the STATUS to PAID
