@@ -13,7 +13,6 @@ class Admin::BillsController < ApplicationController
     render json: @bill
   end
 
-  # POST /bills THIS DOESN"T MAKE SENSE!! DELETE
   def create
     @bill = Bill.new(bill_params)
 
@@ -24,7 +23,6 @@ class Admin::BillsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /bills/1 # A CUSTOMER SHOULDN"T BE ABLE TO UPDATE A BILL
   def update
     if @bill.update(bill_params)
       render json: @bill
@@ -33,7 +31,6 @@ class Admin::BillsController < ApplicationController
     end
   end
 
-  # DELETE /bills/1 # A CUSTOMER SHOULDN"T BE ABLE TO UPDATE A BILL
   def destroy
     @bill.destroy
   end
