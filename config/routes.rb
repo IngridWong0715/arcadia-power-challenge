@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/home', to: 'customer#home'
 
-  get 'accounts/:account_number', to: 'customer#account_information'
-  get 'accounts/:account_number/billing_history', to: 'customer#billing_history'
+  get 'accounts', to: 'customer_account#all_customer_accounts' # ACCOUNT INDEX
+  post 'accounts', to: 'customer_account#create_new_account' # ACCOUNT CREATE
+  get 'accounts/:account_number', to: 'customer_account#home' # ACCOUNTS SHOW
+  patch 'accounts/:account_number', to: 'customer_account#update_account_info'# ACCOUNT UPDATE
+  delete 'accounts/:account_number', to: 'customer_account#delete_account' # ACCOUNT DESTROY
 
-  get 'accounts/:account_number/bills/unpaid', to: 'customer#unpaid_bills'
-  patch 'accounts/:account_number/bills/:bill_id/pay', to: 'customer#pay_bill'
-  get 'accounts/:account_number/bills/:start_date', to: 'customer#monthly_bill'
+
+  get 'accounts/:account_number/bills', to: 'customer_account#billing_history' #BILLS INDEX
+  get 'accounts/:account_number/bills/:bill_id', to: 'customer_account#show_bill' # BILLS SHOW
+  get 'accounts/:account_number/bills/:start_date', to: 'customer_account#monthly_bill' #BILLS SHOW BY MONTH
+  get 'accounts/:account_number/bills/unpaid', to: 'customer_account#unpaid_bills'
+  patch 'accounts/:account_number/bills/:bill_id/pay', to: 'customer_account#pay_bill' # kind of similar to UPDATE
+
 
 
   post 'auth_user' => 'authentication#authenticate_user'

@@ -4998,3 +4998,585 @@ Completed 200 OK in 481893ms (Views: 14.8ms | ActiveRecord: 8.2ms)
 
 
   [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."category" = ? LIMIT ?[0m  [["category", "residential"], ["LIMIT", 11]]
+  [1m[35m (6.0ms)[0m  [1m[34mselect count(*) from users;[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect first_name from users limit 4;[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect usage from bill inner join account on account.id = bill.account_id where account.category = residential;[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect usage from bills inner join accounts on account.id = bill.account_id where account.category = residential;[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills inner join accounts on account.id = bill.account_id[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect usage from bills inner join accounts on bill.account_id = account.id[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills [0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills where usage > 500[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect avg(usage) from bills inner join accounts on bill.account_id = account.id[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect account_id from bills[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect avg(usage) from bills inner join accounts on bill.account_id = account.id[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect avg(usage) from bills inner join accounts on bills.account_id = accounts.id[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect avg(usage) from bills inner join accounts on bills.account_id = accounts.id where accounts.category = residential[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills inner join accounts on bills.account_id = accounts.id[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bills"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills inner join accounts on bills.account_id = accounts.id where accounts.category = residential[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect usage from bills inner join accounts on bills.account_id = accounts.id where accounts.category = 'residential'[0m
+  [1m[36mresidential (0.7ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = ?[0m
+  [1m[35m (0.3ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[35m (0.8ms)[0m  [1m[34m
+     select *
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[35m (1.1ms)[0m  [1m[34m
+     select *
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[35m (1.2ms)[0m  [1m[34m
+     select *
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'
+     AND
+     cast(strftime('%Y', start_date) as int) = 3 AND cast(strftime('%m', start_date) as int) = 2018 [0m
+  [1m[36mBill Load (1.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34m
+     select *
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[36mBill Load (1.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[34m
+     select *
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[36mBill Load (0.7ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[36mBill Load (0.8ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34m
+     select id usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[36mBill Load (0.8ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34m
+     select Bills.id usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[36mBill Load (0.7ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '02' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'residential'[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' )[0m
+  [1m[35m (0.4ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'commercial'[0m
+  [1m[36mBill Load (12.5ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' )[0m
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' ) LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' ) ORDER BY "bills"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' ) ORDER BY "bills"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.2ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'commercial'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '01' )[0m
+  [1m[35m (0.2ms)[0m  [1m[34m
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'commercial'[0m
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" INNER JOIN accounts ON accounts.id = bills.account_id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/home" for 127.0.0.1 at 2018-08-08 00:31:42 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/ingridooo/Desktop/Arcadia Code Challenge/arcadia-power-challenge/app/controllers/customer_controller.rb:93: syntax error, unexpected end-of-input):
+  
+app/controllers/customer_controller.rb:93: syntax error, unexpected end-of-input
+Started GET "/home" for 127.0.0.1 at 2018-08-08 00:31:59 -0400
+Processing by CustomerController#home as */*
+  Parameters: {"customer"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 3.2ms)
+
+
+  
+NameError (undefined local variable or method `account' for #<CustomerController:0x00007f87ed9e0c88>
+Did you mean?  account_url):
+  
+app/controllers/customer_controller.rb:84:in `block in prev_twelve_bills_usage'
+app/controllers/customer_controller.rb:80:in `prev_twelve_bills_usage'
+app/controllers/customer_controller.rb:7:in `home'
+Started GET "/home" for 127.0.0.1 at 2018-08-08 00:33:46 -0400
+Processing by CustomerController#home as */*
+  Parameters: {"customer"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_controller.rb:85
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 84ms (Views: 5.2ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/accounts/2349-23422" for 127.0.0.1 at 2018-08-08 10:59:15 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CustomerAccountController#home as */*
+  Parameters: {"account_number"=>"2349-23422", "customer_account"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? ORDER BY "accounts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:86
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 355099ms (Views: 4.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/accounts/2349-23422" for 127.0.0.1 at 2018-08-08 11:05:13 -0400
+Processing by CustomerAccountController#home as */*
+  Parameters: {"account_number"=>"2349-23422", "customer_account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 1], ["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:64
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.75ms)
+Completed 200 OK in 64ms (Views: 5.6ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/accounts/2349-23422" for 127.0.0.1 at 2018-08-08 11:05:47 -0400
+Processing by CustomerAccountController#home as */*
+  Parameters: {"account_number"=>"2349-23422", "customer_account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 1], ["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.54ms)
+Completed 200 OK in 65ms (Views: 3.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/accounts/2349-23422" for 127.0.0.1 at 2018-08-08 11:06:02 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CustomerAccountController#home as */*
+  Parameters: {"account_number"=>"2349-23422", "customer_account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 1], ["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.8ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.27ms)
+Completed 200 OK in 108ms (Views: 9.4ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/accounts/2349-23422" for 127.0.0.1 at 2018-08-08 11:06:32 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CustomerAccountController#home as */*
+  Parameters: {"account_number"=>"2349-23422", "customer_account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 1], ["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:64
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+  [1m[36mBill Load (0.8ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customer_account_controller.rb:81
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.4ms)
+Completed 200 OK in 107ms (Views: 8.5ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/accounts" for 127.0.0.1 at 2018-08-08 12:14:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by CustomerAccountController#create_new_account as */*
+  Parameters: {"customer_account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 400 Bad Request in 25ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: account):
+  
+app/controllers/customer_account_controller.rb:91:in `account_params'
+app/controllers/customer_account_controller.rb:14:in `create_new_account'
+Started POST "/accounts" for 127.0.0.1 at 2018-08-08 12:14:40 -0400
+Processing by CustomerAccountController#create_new_account as */*
+  Parameters: {"customer_account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 400 Bad Request in 167506ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: account):
+  
+app/controllers/customer_account_controller.rb:92:in `account_params'
+app/controllers/customer_account_controller.rb:15:in `create_new_account'
+Started POST "/admin/accounts" for 127.0.0.1 at 2018-08-08 12:17:33 -0400
+Processing by Admin::AccountsController#create as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 400 Bad Request in 21ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: account):
+  
+app/controllers/admin/accounts_controller.rb:58:in `account_params'
+app/controllers/admin/accounts_controller.rb:19:in `create'

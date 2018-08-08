@@ -18,7 +18,6 @@ class Bill < ApplicationRecord
      averages[month_year] = monthly_average_usage(month, year)
    end
    averages
-
  end
 
  def self.monthly_average_usage(month, year = Date.today.year)
@@ -27,6 +26,27 @@ class Bill < ApplicationRecord
 
  def self.by_month(month, year = Date.today.year)
    where("cast(strftime('%Y', start_date) as int) = ? AND cast(strftime('%m', start_date) as int) = ? ", year, month)
+ end
+
+ # NOT WORKING:
+ # BY_ACCOUNT_TYPE does not take into account bills_by_month
+ def self.monthly_usage_by_account_type(account_type, month, year = Date.today.year)
+   bills_by_month= by_month(month, year)
+   res = bills_by_month.by_account_type(account_type)
+
+ end
+
+ def self.by_account_type(type)
+   # get all bills whose account is of type
+   p = ActiveRecord::Base.establish_connection
+   c = p.connection
+   results = c.execute("
+     select usage
+     from bills
+     inner join accounts on bills.account_id = accounts.id
+     where accounts.category = 'commercial'")
+
+     results
  end
 
 end
