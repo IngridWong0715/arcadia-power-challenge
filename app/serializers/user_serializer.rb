@@ -1,6 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
   has_many :accounts
-  has_many :bills
   attributes :id, :first_name, :last_name, :full_name, :email, :status
 
   def full_name

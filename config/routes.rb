@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/stats', to: 'accounts#stats'
+  get '/home', to: 'customer#home'
 
-  resources :accounts do
-    resources :bills
-    get '/bills/unpaid', to: 'bills#get_unpaid_bills'
-    get '/bills/paid', to: 'bills#get_paid_bills'
-    patch '/bills/:id/pay', to: 'bills#pay_bill' # very similar to UPDATE! ASK
-    get '/bills/:start_date', to: 'bills#get_bills_by_start_month'
+  get 'accounts/:account_number', to: 'customer#account_information'
+  get 'accounts/:account_number/billing_history', to: 'customer#billing_history'
 
-  end
+  get 'accounts/:account_number/bills/unpaid', to: 'customer#unpaid_bills'
+  patch 'accounts/:account_number/bills/:bill_id/pay', to: 'customer#pay_bill'
+  get 'accounts/:account_number/bills/:start_date', to: 'customer#monthly_bill'
+
 
   post 'auth_user' => 'authentication#authenticate_user'
 
   scope '/admin', module: 'admin' do
+    resources :accounts
+    resources :bills
     resources :users
     get '/users/:email', to: 'users#email', constraints: { email: /.+@.+/} # Look up by user email
     #more info on constraints: https://guides.rubyonrails.org/routing.html#advanced-constraints

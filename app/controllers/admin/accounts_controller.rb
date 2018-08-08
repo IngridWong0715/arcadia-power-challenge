@@ -1,4 +1,4 @@
-class AccountsController < ApplicationController
+class Admin::AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update, :destroy]
   rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
