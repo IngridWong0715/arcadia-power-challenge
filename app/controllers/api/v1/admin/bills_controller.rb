@@ -35,20 +35,19 @@ module Api
         @bill.destroy
       end
 
-
       private
 
-        def set_bill
-          @bill = Bill.find(params[:id])
-        end
+      def set_bill
+        @bill = Bill.find(params[:id])
+      end
 
-        def record_not_found
-          render json: {"Access Prohibited": "You don't have access to this bill"}
-        end
+      def record_not_found
+        render json: {"Access Prohibited": "You don't have access to this bill"}
+      end
 
-        def bill_params
-          params.require(:bill).permit(:start_date, :end_date, :usage, :charges, :status, :account_id)
-        end
+      def bill_params
+        params.require(:bill).permit(:start_date, :end_date, :usage, :charges, :status, :account_id)
+      end
     end
   end
 end

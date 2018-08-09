@@ -42,13 +42,13 @@ module Api
 
       private
 
-        def set_user
-          @user = User.find(params[:id])
-        end
+      def set_user
+        @user = User.find(params[:id])
+      end
 
-        def user_params
-          params.require(:user).permit(:first_name, :last_name, :email, :status)
-        end
+      def user_params
+        params.require(:user).permit(:first_name, :last_name, :email, :status)
+      end
     end
   end
 end

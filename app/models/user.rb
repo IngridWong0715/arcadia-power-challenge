@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   extend CalculatePercentage
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :accounts
@@ -21,9 +20,5 @@ class User < ApplicationRecord
   def self.inactive_percentage
     percentage(inactive.count.to_f, count.to_f)
   end
-
-
-
-
 
 end
