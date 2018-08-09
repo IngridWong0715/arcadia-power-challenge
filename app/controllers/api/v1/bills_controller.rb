@@ -6,7 +6,6 @@ module Api
       before_action :set_account, only: [:index]
       rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
-
       def index
         @bills = @account.bills.all
         render json: @bills

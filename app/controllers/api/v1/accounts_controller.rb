@@ -17,8 +17,6 @@ module Api
       end
 
       def create
-        #WORK ON VALIDATION: a new account should only be created if it's unique for the user
-        # (utility + account_number) combo must be unique
         @account = current_user.accounts.new(account_params)
 
         if @account.save
