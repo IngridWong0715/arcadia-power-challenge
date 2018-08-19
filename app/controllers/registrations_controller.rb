@@ -27,7 +27,6 @@ class RegistrationsController < Devise::RegistrationsController
   	end
 
 
-
     def payload(user)
       return nil unless user and user.id
       {

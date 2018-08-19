@@ -8279,3 +8279,68 @@ Unpermitted parameter: :email
 Completed 200 OK in 2449ms (Views: 5.5ms | ActiveRecord: 1.1ms)
 
 
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:13:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Unpermitted parameters: :email, :password
+Unpermitted parameter: :email
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ (pry):8
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ (pry):9
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Unpermitted parameter: :email
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 179791ms (Views: 2.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:18:00 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 85895ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:19:51 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ (pry):4
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 146367ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:22:20 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 2404ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<AuthenticationController:0x00007fe0d93e1fe0>):
+  
+app/controllers/authentication_controller.rb:7:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:22:47 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"@wgamilc.om", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 2339ms (Views: 5.3ms | ActiveRecord: 1.3ms)
+
+
