@@ -35,7 +35,6 @@ module Api
         @account.destroy
       end
 
-
       private
 
         def set_account

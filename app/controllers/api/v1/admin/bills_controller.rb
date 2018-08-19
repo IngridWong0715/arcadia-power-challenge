@@ -6,7 +6,7 @@ module Api
 
       def index
         @bills = Bill.all
-        render json: @bills
+        render json: @bills, status: 200
       end
 
       def show
