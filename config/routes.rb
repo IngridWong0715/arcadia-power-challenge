@@ -11,9 +11,9 @@ Rails.application.routes.draw do
       delete 'accounts/:account_number', to: 'accounts#destroy'
 
       get 'accounts/:account_number/bills', to: 'bills#index'
-      get 'accounts/:account_number/bills/:id', to: 'bills#show'
-      get 'accounts/:account_number/bills/:start_date', to: 'bills#monthly_bill'
+      #get 'accounts/:account_number/bills/:id', to: 'bills#show'
       get 'accounts/:account_number/bills/unpaid', to: 'bills#unpaid_bills'
+      get 'accounts/:account_number/bills/:start_date', to: 'bills#monthly_bill'
       patch 'accounts/:account_number/bills/:id/pay', to: 'bills#update'
 
       scope '/admin', module: 'admin' do

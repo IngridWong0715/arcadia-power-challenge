@@ -2,7 +2,7 @@ module Api
   module V1
     class BillsController < ApplicationController
       before_action :set_bill, only: [:show, :update, :destroy]
-      before_action :set_account, only: [:index]
+      before_action :set_account, only: [:index, :unpaid_bills, :monthly_bill ]
       rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
       def index
@@ -11,18 +11,24 @@ module Api
       end
 
       def unpaid_bills
+        binding.pry
         @unpaid_bills = @account.bills.unpaid
         render json: @unpaid_bills
       end
 
       def show
+
         render json: @bill
       end
 
       def monthly_bill
+
         month = params[:start_date].split('-')[1]
         year = params[:start_date].split('-')[0]
+        binding.pry
         @bill = @account.bills.by_month(month, year)
+
+        binding.pry
         render json: @bill
       end
 

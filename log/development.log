@@ -6924,3 +6924,269 @@ Completed 500 Internal Server Error in 80ms (ActiveRecord: 3.1ms)
 NoMethodError (undefined method `full_name' for #<User:0x00007f8402f06f08>):
   
 app/controllers/api/v1/accounts_controller.rb:9:in `index'
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 11:32:53 -0400
+Processing by Api::V1::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" IS NULL LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.66ms)
+Completed 200 OK in 26ms (Views: 9.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills" for 127.0.0.1 at 2018-08-19 11:34:31 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:44
+  [1m[36mBill Load (1.0ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.53ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:35:08 -0400
+Processing by Api::V1::BillsController#show as */*
+  Parameters: {"account_number"=>"2349-23422", "id"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:48
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["account_id", 1], ["id", 2018], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:52
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 27ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:35:52 -0400
+Processing by Api::V1::BillsController#show as */*
+  Parameters: {"account_number"=>"2349-23422", "id"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["account_id", 1], ["id", 2018], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:53
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 39ms (Views: 7.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:36:12 -0400
+Processing by Api::V1::BillsController#show as */*
+  Parameters: {"account_number"=>"2349-23422", "id"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["account_id", 1], ["id", 2018], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:54
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 404 Not Found in 29ms (Views: 5.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/1" for 127.0.0.1 at 2018-08-19 11:36:40 -0400
+Processing by Api::V1::BillsController#show as */*
+  Parameters: {"account_number"=>"2349-23422", "id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["account_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:54
+Started GET "/api/v1/accounts/2349-23422/bills" for 127.0.0.1 at 2018-08-19 11:38:08 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:46
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+Started GET "/api/v1/accounts/2349-23422/bills" for 127.0.0.1 at 2018-08-19 11:38:33 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:46
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.98ms)
+Completed 200 OK in 42ms (Views: 16.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/1" for 127.0.0.1 at 2018-08-19 11:39:26 -0400
+Processing by Api::V1::BillsController#show as */*
+  Parameters: {"account_number"=>"2349-23422", "id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."id" = ? LIMIT ?[0m  [["account_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:54
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 40ms (Views: 1.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:41:06 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"2349-23422", "start_date"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 3851ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:27:in `monthly_bill'
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:41:41 -0400
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"2349-23422", "start_date"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:27:in `monthly_bill'
+Started GET "/api/v1/accounts/2349-23422/bills/2018-01-15" for 127.0.0.1 at 2018-08-19 11:41:51 -0400
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"2349-23422", "start_date"=>"2018-01-15", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ (pry):3
+Completed 500 Internal Server Error in 148072ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:28:in `monthly_bill'
+Started GET "/api/v1/accounts/2349-23422/unpaid_bills" for 127.0.0.1 at 2018-08-19 11:44:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/accounts/2349-23422/unpaid_bills"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid_bills" for 127.0.0.1 at 2018-08-19 11:44:43 -0400
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"2349-23422", "start_date"=>"unpaid_bills", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 77437ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:28:in `monthly_bill'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid" for 127.0.0.1 at 2018-08-19 11:46:07 -0400
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"2349-23422", "start_date"=>"unpaid", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 20463ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:28:in `monthly_bill'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid" for 127.0.0.1 at 2018-08-19 11:46:35 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#unpaid_bills as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:14:in `unpaid_bills'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid" for 127.0.0.1 at 2018-08-19 11:46:57 -0400
+Processing by Api::V1::BillsController#unpaid_bills as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 49830ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:15:in `unpaid_bills'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid" for 127.0.0.1 at 2018-08-19 11:47:50 -0400
+Processing by Api::V1::BillsController#unpaid_bills as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 9409ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:15:in `unpaid_bills'
+Started GET "/api/v1/accounts/2349-23422/bills/unpaid" for 127.0.0.1 at 2018-08-19 11:48:25 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#unpaid_bills as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."status" = ?[0m  [["account_id", 1], ["status", "unpaid"]]
+  ↳ app/controllers/api/v1/bills_controller.rb:16
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 9315ms (Views: 8.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/accounts/2349-23422/bills" for 127.0.0.1 at 2018-08-19 11:48:42 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.8ms)
+
+
