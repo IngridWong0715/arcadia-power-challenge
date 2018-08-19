@@ -10,7 +10,6 @@ module Api
       end
 
       def show
-        binding.pry
         render json: @user
       end
 
@@ -45,7 +44,6 @@ module Api
       private
 
       def set_user
-        binding.pry
         @user = User.find(params[:id])
       end
 

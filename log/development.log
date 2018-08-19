@@ -8344,3 +8344,669 @@ Processing by AuthenticationController#authenticate_user as */*
 Completed 401 Unauthorized in 2339ms (Views: 5.3ms | ActiveRecord: 1.3ms)
 
 
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:32:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 162ms (Views: 3.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 18:34:32 -0400
+Processing by Api::V1::Admin::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Filter chain halted as :authorize_admin_request! rendered or redirected
+Completed 403 Forbidden in 11ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 18:35:10 -0400
+Processing by Api::V1::Admin::UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Unpermitted parameter: :password
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 422 Unprocessable Entity in 27ms (Views: 16.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 18:35:20 -0400
+Processing by Api::V1::Admin::UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 10]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 11]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 12]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 13]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 14]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 15]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 16]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (41.17ms)
+Completed 200 OK in 75ms (Views: 70.8ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 18:36:10 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 7827ms (ActiveRecord: 2.5ms)
+
+
+Started DELETE "/api/v1/admin/users/8" for 127.0.0.1 at 2018-08-19 18:36:23 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 2063ms (ActiveRecord: 6.8ms)
+
+
+Started DELETE "/api/v1/admin/users/9" for 127.0.0.1 at 2018-08-19 18:36:29 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"9"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 1691ms (ActiveRecord: 7.4ms)
+
+
+Started DELETE "/api/v1/admin/users/9" for 127.0.0.1 at 2018-08-19 18:36:45 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+Completed 404 Not Found in 18ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=9):
+  
+app/controllers/api/v1/admin/users_controller.rb:49:in `set_user'
+Started DELETE "/api/v1/admin/users/10" for 127.0.0.1 at 2018-08-19 18:36:51 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 5ms (ActiveRecord: 1.9ms)
+
+
+Started DELETE "/api/v1/admin/users/11" for 127.0.0.1 at 2018-08-19 18:36:55 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 10ms (ActiveRecord: 7.1ms)
+
+
+Started DELETE "/api/v1/admin/users/12" for 127.0.0.1 at 2018-08-19 18:36:57 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 12]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 11ms (ActiveRecord: 7.5ms)
+
+
+Started DELETE "/api/v1/admin/users/13" for 127.0.0.1 at 2018-08-19 18:37:00 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"13"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 13]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 10ms (ActiveRecord: 6.7ms)
+
+
+Started DELETE "/api/v1/admin/users/14" for 127.0.0.1 at 2018-08-19 18:37:02 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"14"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 9ms (ActiveRecord: 6.7ms)
+
+
+Started DELETE "/api/v1/admin/users/15" for 127.0.0.1 at 2018-08-19 18:37:05 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"15"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 15]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 9ms (ActiveRecord: 6.8ms)
+
+
+Started DELETE "/api/v1/admin/users/16" for 127.0.0.1 at 2018-08-19 18:37:07 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 16]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 10ms (ActiveRecord: 7.1ms)
+
+
+Started DELETE "/api/v1/admin/users/16" for 127.0.0.1 at 2018-08-19 18:38:24 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+Completed 404 Not Found in 19ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=16):
+  
+app/controllers/api/v1/admin/users_controller.rb:49:in `set_user'
+Started DELETE "/api/v1/admin/users/16" for 127.0.0.1 at 2018-08-19 18:38:43 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:49
+Completed 404 Not Found in 22ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=16):
+  
+app/controllers/api/v1/admin/users_controller.rb:49:in `set_user'
+Started DELETE "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 18:39:22 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/admin/users"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 18:39:27 -0400
+Processing by Api::V1::Admin::UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (19.09ms)
+Completed 200 OK in 35ms (Views: 20.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:43:15 -0400
+Processing by Api::V1::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" IS NULL LIMIT ?[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 6]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 18:45:17 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"john.johnson@yahoo.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"john.johnson@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "john.johnson@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 150ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:46:26 -0400
+Processing by Api::V1::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 10ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:47:45 -0400
+Processing by Api::V1::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:49:54 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 22:49:54.190700"], ["updated_at", "2018-08-19 22:49:54.190700"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dad72488>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:54:59 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 22:54:59.868417"], ["updated_at", "2018-08-19 22:54:59.868417"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7db2bfdc8>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started GET "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 18:55:17 -0400
+Processing by Api::V1::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" IS NULL LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:00:38 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:00:38.464979"], ["updated_at", "2018-08-19 23:00:38.464979"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 7.1ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dcf30778>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:01:48 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:01:48.945229"], ["updated_at", "2018-08-19 23:01:48.945229"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 5.2ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7e115d128>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:02:05 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:02:05.858591"], ["updated_at", "2018-08-19 23:02:05.858591"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 8.8ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dbd01cc8>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:02:34 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:02:35.089370"], ["updated_at", "2018-08-19 23:02:35.089370"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 9.8ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dacbbeb8>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:03:10 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:03:10.627923"], ["updated_at", "2018-08-19 23:03:10.627923"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 8.7ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dad43070>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:05:21 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:05:21.492132"], ["updated_at", "2018-08-19 23:05:21.492132"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 8.5ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::AccountsController:0x00007fb7dcce60a8>):
+  
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:06:23 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:06:23.467749"], ["updated_at", "2018-08-19 23:06:23.467749"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.4ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/api/v1/accounts_controller.rb:52:in `account_url'
+app/controllers/api/v1/accounts_controller.rb:23:in `create'
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:07:04 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:07:05.040024"], ["updated_at", "2018-08-19 23:07:05.040024"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (5.02ms)
+Completed 201 Created in 30981ms (Views: 30944.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:07:40 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[36mAccount Create (0.4ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["user_id", 2], ["created_at", "2018-08-19 23:07:40.233850"], ["updated_at", "2018-08-19 23:07:40.233850"]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.48ms)
+Completed 201 Created in 38ms (Views: 3.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:18:29 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 201 Created in 31ms (Views: 3.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:18:33 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:44
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/accounts_controller.rb:22
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 201 Created in 6ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:21:28 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:48
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.67ms)
+Completed 200 OK in 30ms (Views: 6.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/v1/accounts" for 127.0.0.1 at 2018-08-19 19:22:04 -0400
+Processing by Api::V1::AccountsController#create as */*
+  Parameters: {"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567", "account"=>{"utility"=>"pepco", "category"=>"commercial", "account_number"=>"1234567"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:48
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["utility", "pepco"], ["category", "commercial"], ["account_number", "1234567"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 30ms (Views: 6.4ms | ActiveRecord: 1.7ms)
+
+

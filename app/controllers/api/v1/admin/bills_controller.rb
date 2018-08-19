@@ -41,6 +41,7 @@ module Api
         @bill = Bill.find(params[:id])
       end
 
+    
       def record_not_found
         render json: {"Access Prohibited": "You don't have access to this bill"}
       end

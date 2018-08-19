@@ -48,6 +48,10 @@ module Api
         def account_params
           params.require(:account).permit(:utility, :category, :account_number, :user_id)
         end
+
+    
+
+
     end
   end
 end

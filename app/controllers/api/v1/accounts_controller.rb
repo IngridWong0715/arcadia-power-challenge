@@ -17,12 +17,16 @@ module Api
       end
 
       def create
-        @account = current_user.accounts.new(account_params)
+        @account = current_user.accounts.find_or_initialize_by(account_params)
 
-        if @account.save
-          render json: @account, status: :created, location: @account
+        if @account.new_record?
+          if @account.save
+            render json: @account, status: :created, location: @account
+          else
+            render json: @account.errors, status: :unprocessable_entity
+          end
         else
-          render json: @account.errors, status: :unprocessable_entity
+          render json: {errors: "account already exists", account: @account}, location: @account
         end
       end
 
@@ -42,6 +46,10 @@ module Api
 
       def set_account
         @account = current_user.accounts.find_by_account_number(params[:account_number])
+      end
+
+      def account_url(account)
+        "localhost:/3000/api/v1/accounts/#{account.id}"
       end
 
       def record_not_found
