@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       scope '/admin', module: 'admin' do
         resources :bills
         resources :accounts
-        resources :users
+        resources :users, except: [:show]
         get '/users/:email', to: 'users#email', constraints: { email: /.+@.+/}
         get '/stats/monthly_average_usage/:month/:year', to: 'stats#monthly_average_usage'
         get '/stats/user_activity', to: 'stats#user_activity'

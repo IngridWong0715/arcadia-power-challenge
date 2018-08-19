@@ -7644,3 +7644,638 @@ Processing by RegistrationsController#create as */*
 Completed 200 OK in 2781ms (Views: 0.6ms | ActiveRecord: 2.0ms)
 
 
+Started POST "/auth_user?email=admin@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 14:44:30 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.22ms)
+Completed 200 OK in 181ms (Views: 4.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 14:48:06 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail", "password"=>"[FILTERED]", "authentication"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 14:48:38 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail", "password"=>"[FILTERED]", "authentication"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `bindingi' for #<AuthenticationController:0x00007fea0ee367c8>
+Did you mean?  binding):
+  
+app/controllers/authentication_controller.rb:6:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 14:48:48 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail", "password"=>"[FILTERED]", "authentication"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7
+Completed 500 Internal Server Error in 67516ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate_user'
+Started POST "/auth_user?email=admin@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 14:50:06 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 235062ms (Views: 2.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 14:54:04 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ (pry):7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7
+Completed 500 Internal Server Error in 345025ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 15:00:07 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail", "password"=>"[FILTERED]", "authentication"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ (pry):11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ (pry):12
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:7
+Completed 500 Internal Server Error in 207795ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 15:03:42 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<AuthenticationController:0x00007fea0c386398>):
+  
+app/controllers/authentication_controller.rb:27:in `configure_permitted_parameters'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 15:05:52 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<AuthenticationController:0x00007fea0bdc3cf8>):
+  
+app/controllers/authentication_controller.rb:27:in `configure_permitted_parameters'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 15:09:30 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 3159506ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `resource_class' for #<AuthenticationController:0x00007fea0beb5378>):
+  
+app/controllers/authentication_controller.rb:28:in `configure_permitted_parameters'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:02:15 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ (pry):14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 44444ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:03:09 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `configure_permitted_parameters' for #<AuthenticationController:0x00007ffb3e488668>):
+  
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:03:23 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `configure_permitted_parameters' for #<AuthenticationController:0x00007ffb3edbe020>):
+  
+activesupport (5.2.0) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.0) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.0) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.0) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.0) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.0) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.0) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.0) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.0) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:03:37 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ (pry):1
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 9682ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 16:08:11 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "email"=>"a@a.com", "password"=>"[FILTERED]", "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user?email=a@a.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 16:08:17 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"a@a.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user?email=admin@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 16:08:29 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 128ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/auth_user?email=admin@gmail.com&password=[FILTERED]" for 127.0.0.1 at 2018-08-19 16:08:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "authentication"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 29075ms (Views: 6.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:09:40 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ (pry):6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 321065ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/users" for 127.0.0.1 at 2018-08-19 16:15:28 -0400
+Processing by RegistrationsController#create as */*
+  Parameters: {"user"=>{"first_name"=>"Sally", "last_name"=>"Choi", "email"=>"adql@wgamilc.om", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "registration"=>{"user"=>{"first_name"=>"Sally", "last_name"=>"Choi", "email"=>"adql@wgamilc.om", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adql@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/registrations_controller.rb:8
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Sally"], ["last_name", "Choi"], ["created_at", "2018-08-19 20:17:14.851110"], ["updated_at", "2018-08-19 20:17:14.851110"], ["email", "adql@wgamilc.om"], ["encrypted_password", "$2a$11$PRIncSVlWQLSYqpn3T8nPeDu3SbQn7IoS4k5F1TODnQy8ZW.FzRbW"]]
+  ↳ app/controllers/registrations_controller.rb:8
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 200 OK in 108167ms (Views: 4.0ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:17:28 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["password", "adminpassword"], ["LIMIT", 1]]
+  ↳ (pry):10
+Completed 500 Internal Server Error in 103182ms (ActiveRecord: 1.3ms)
+
+
+  
+NameError (undefined local variable or method `sign_up_params' for #<AuthenticationController:0x00007fc0b1aa5ef0>
+Did you mean?  sign_in_params):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:19:15 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ (pry):11
+Unpermitted parameter: :password
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 234388ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:23:16 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 183037ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started GET "/api/v1/accounts/2349-23422/bills" for 127.0.0.1 at 2018-08-19 16:27:18 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"2349-23422", "bill"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "2349-23422"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.94ms)
+Completed 200 OK in 67ms (Views: 16.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/v1/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:27:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/users/admin@gmail.com"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:27:42 -0400
+Processing by Api::V1::Admin::UsersController#show as 
+  Parameters: {"id"=>"admin@gmail", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Filter chain halted as :authorize_admin_request! rendered or redirected
+Completed 403 Forbidden in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/v1/admin/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:28:11 -0400
+Processing by Api::V1::Admin::UsersController#show as 
+  Parameters: {"id"=>"admin@gmail", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:46
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=admin@gmail):
+  
+app/controllers/api/v1/admin/users_controller.rb:46:in `set_user'
+Started GET "/api/v1/admin/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:30:37 -0400
+Processing by Api::V1::Admin::UsersController#show as 
+  Parameters: {"id"=>"admin@gmail", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+Completed 404 Not Found in 84811ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=admin@gmail):
+  
+app/controllers/api/v1/admin/users_controller.rb:48:in `set_user'
+Started GET "/api/v1/admin/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:32:08 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#show as 
+  Parameters: {"id"=>"admin@gmail", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+Completed 404 Not Found in 31961ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=admin@gmail):
+  
+app/controllers/api/v1/admin/users_controller.rb:48:in `set_user'
+Started GET "/api/v1/admin/users/admin@gmail.com" for 127.0.0.1 at 2018-08-19 16:32:50 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#email as */*
+  Parameters: {"email"=>"admin@gmail.com", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):2
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:41
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:42
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (18.07ms)
+Completed 200 OK in 58159ms (Views: 82.1ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:34:00 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 566944ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:9:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:43:31 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):8
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 22077ms (Views: 3.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:44:45 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["password", "adminpassword"], ["LIMIT", 1]]
+  ↳ (pry):1
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["password", "adminpassword"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Completed 500 Internal Server Error in 33061ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.password: SELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."password" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/controllers/authentication_controller.rb:8:in `authenticate_user'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:45:23 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Unpermitted parameter: :email
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):4
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 206010ms (Views: 12.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:48:58 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/ingridooo/Desktop/Arcadia /challenge/arcadia-power-challenge/app/controllers/authentication_controller.rb:9: syntax error, unexpected ')', expecting ']'
+params[user_params(:password))
+                              ^
+/Users/ingridooo/Desktop/Arcadia /challenge/arcadia-power-challenge/app/controllers/authentication_controller.rb:58: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/authentication_controller.rb:9: syntax error, unexpected ')', expecting ']'
+app/controllers/authentication_controller.rb:58: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:49:19 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):1
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):2
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :email
+Unpermitted parameter: :password
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Unpermitted parameter: :email
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 401 Unauthorized in 188825ms (Views: 14.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:52:32 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Unpermitted parameter: :email
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 2988ms (Views: 3.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 16:54:11 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"sl@wgamilc.om", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sl@wgamilc.om"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8
+Unpermitted parameter: :email
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2449ms (Views: 5.5ms | ActiveRecord: 1.1ms)
+
+
