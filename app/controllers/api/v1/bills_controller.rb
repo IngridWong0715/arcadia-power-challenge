@@ -17,7 +17,6 @@ module Api
       end
 
       def show
-
         render json: @bill
       end
 

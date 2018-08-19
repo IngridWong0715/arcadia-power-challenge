@@ -1,7 +1,7 @@
 module Api
   module V1
     class AccountsController < ApplicationController
-      before_action :set_account, except: [:all_customer_accounts, :create_new_account]
+      before_action :set_account, only: [:show, :update, :destroy]
       rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
       def index
@@ -13,7 +13,9 @@ module Api
         twelve_month_averages = Bill.twelve_month_averages
         customer_bills = prev_twelve_bills_usage(@account)
         comparison = {}
-        render json: {aggregate: twelve_month_averages, customer: customer_bills, account_information: @account}
+        render json: {account_information: @account,
+                      stats: { account_monthly_usage: customer_bills,
+                               aggregate_monthly_averages: twelve_month_averages}}
       end
 
       def create
@@ -40,12 +42,16 @@ module Api
 
       def destroy
         @account.destroy
+        render json: {message: "account successfully deleted"}
       end
 
       private
 
       def set_account
         @account = current_user.accounts.find_by_account_number(params[:account_number])
+        unless @account
+          record_not_found
+        end
       end
 
       def account_url(account)
@@ -53,7 +59,7 @@ module Api
       end
 
       def record_not_found
-        render json: { errors: ['Unable to find the requested data'] }, status: :not_found
+        render json: { errors: "Unable to find the requested data" }, status: :not_found
       end
 
       def account_params
