@@ -11,16 +11,18 @@ Rails.application.routes.draw do
       delete 'accounts/:account_number', to: 'accounts#destroy'
 
       get 'accounts/:account_number/bills', to: 'bills#index'
-      #get 'accounts/:account_number/bills/:id', to: 'bills#show'
       get 'accounts/:account_number/bills/unpaid', to: 'bills#unpaid_bills'
-      get 'accounts/:account_number/bills/:start_date', to: 'bills#monthly_bill'
-      patch 'accounts/:account_number/bills/:id/pay', to: 'bills#update'
+      get 'accounts/:account_number/bills/:start_date', to: 'bills#show_by_month'
+      patch 'accounts/:account_number/bills/:start_date/pay', to: 'bills#pay_by_month'
 
       scope '/admin', module: 'admin' do
-        resources :bills
-        resources :accounts
-        resources :users, except: [:show]
-        get '/users/:email', to: 'users#email', constraints: { email: /.+@.+/}
+
+        resources :accounts do
+          resources :bills
+        end
+        
+        resources :users
+        get '/users/find_by_email/:email', to: 'users#email', constraints: { email: /.+@.+/}
         get '/stats/monthly_average_usage/:month/:year', to: 'stats#monthly_average_usage'
         get '/stats/user_activity', to: 'stats#user_activity'
         get 'stats/account_breakdown', to: 'stats#account_type_breakdown'

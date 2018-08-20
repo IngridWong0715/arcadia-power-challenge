@@ -10264,3 +10264,1098 @@ Processing by Api::V1::AccountsController#index as */*
 Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/v1/accounts/43332234" for 127.0.0.1 at 2018-08-19 20:52:54 -0400
+Processing by Api::V1::AccountsController#show as */*
+  Parameters: {"account_number"=>"43332234", "account"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (1.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ? AND "accounts"."account_number" = ? LIMIT ?[0m  [["user_id", 2], ["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:51
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("bills"."usage") FROM "bills" WHERE (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 )[0m
+  ↳ app/models/bill.rb:24
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 7 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 6 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 5 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 4 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 3 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 2 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2018 AND cast(strftime('%m', start_date) as int) = 1 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 12 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 11 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 10 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 9 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = 2017 AND cast(strftime('%m', start_date) as int) = 8 ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/accounts_controller.rb:75
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 200 OK in 22ms (Views: 0.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills" for 127.0.0.1 at 2018-08-19 20:52:58 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"43332234", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.78ms)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills/unpaid" for 127.0.0.1 at 2018-08-19 20:53:54 -0400
+Processing by Api::V1::BillsController#unpaid_bills as */*
+  Parameters: {"account_number"=>"43332234", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND "bills"."status" = ?[0m  [["account_id", 2], ["status", "unpaid"]]
+  ↳ app/controllers/api/v1/bills_controller.rb:16
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 6381ms (Views: 2.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills/10" for 127.0.0.1 at 2018-08-19 20:55:03 -0400
+Processing by Api::V1::BillsController#monthly_bill as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"10", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '10' AND cast(strftime('%m', start_date) as int) = NULL )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:31
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 48195ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills" for 127.0.0.1 at 2018-08-19 20:58:17 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::BillsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/accounts/43332234/bills" for 127.0.0.1 at 2018-08-19 20:59:33 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"43332234", "bill"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:45
+  [1m[36mBill Load (1.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 46ms (Views: 11.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 20:59:42 -0400
+Processing by Api::V1::BillsController#by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 2630ms (ActiveRecord: 0.1ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:24:in `by_month'
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 20:59:56 -0400
+Processing by Api::V1::BillsController#by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 24249ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:24:in `by_month'
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 21:00:24 -0400
+Processing by Api::V1::BillsController#by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:45
+  [1m[36mBill Load (6.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:23
+  [1m[36mCACHE Bill Load (0.0ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:27
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 99541ms (Views: 22.3ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 21:09:07 -0400
+  
+AbstractController::ActionNotFound (The action 'by_month' could not be found for Api::V1::BillsController):
+  
+actionpack (5.2.0) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 21:10:12 -0400
+Processing by Api::V1::BillsController#show_by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `bills' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:56:in `set_bill'
+Started GET "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 21:11:37 -0400
+Processing by Api::V1::BillsController#show_by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.7ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:21
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.35ms)
+Completed 200 OK in 40ms (Views: 10.3ms | ActiveRecord: 3.3ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08" for 127.0.0.1 at 2018-08-19 21:11:55 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/accounts/43332234/bills/2017-12-08"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:12:06 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 500 Internal Server Error in 9ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `status' for nil:NilClass):
+  
+app/controllers/api/v1/bills_controller.rb:29:in `pay_by_month'
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:13:19 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:51
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) LIMIT ?[0m  [["account_id", 2], ["LIMIT", 11]]
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Completed 500 Internal Server Error in 43ms (Views: 5.7ms | ActiveRecord: 1.7ms)
+
+
+  
+  [1m[36mCACHE Bill Load (0.0ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) LIMIT ?[0m  [["account_id", 2], ["LIMIT", 11]]
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NoMethodError (undefined method `status' for #<Bill::ActiveRecord_AssociationRelation:0x00007f9ccbe2a5a8>):
+  
+app/controllers/api/v1/bills_controller.rb:30:in `pay_by_month'
+  [1m[36mCACHE Bill Load (0.0ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) LIMIT ?[0m  [["account_id", 2], ["LIMIT", 11]]
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:13:43 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:52
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:29
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 2452386ms (Views: 7.6ms | ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `status' for #<Bill::ActiveRecord_AssociationRelation:0x00007f9ccbcdae78>):
+  
+app/controllers/api/v1/bills_controller.rb:31:in `pay_by_month'
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:54:54 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:52
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.85ms)
+  [1m[36mBill Load (0.5ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' )[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:29
+Completed 500 Internal Server Error in 192722ms (Views: 16.9ms | ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `status' for #<Bill::ActiveRecord_AssociationRelation:0x00007fcb9196fa50>):
+  
+app/controllers/api/v1/bills_controller.rb:31:in `pay_by_month'
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:58:10 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:52
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:62
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 500 Internal Server Error in 7890ms (Views: 11.9ms | ActiveRecord: 2.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/bills_controller.rb:32:in `pay_by_month'
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:59:35 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:59
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 44ms (Views: 6.0ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 21:59:47 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"paid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"paid"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:49
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:59
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 22:00:34 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"paid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"paid"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 47725ms (Views: 7.8ms | ActiveRecord: 3.4ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2017-12-08/pay" for 127.0.0.1 at 2018-08-19 22:01:27 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"paid", "account_number"=>"43332234", "start_date"=>"2017-12-08", "bill"=>{"status"=>"paid"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.4ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2017' AND cast(strftime('%m', start_date) as int) = '12' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 2497ms (Views: 8.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills" for 127.0.0.1 at 2018-08-19 22:01:52 -0400
+Processing by Api::V1::BillsController#index as */*
+  Parameters: {"account_number"=>"43332234", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills" WHERE "bills"."account_id" = ?[0m  [["account_id", 2]]
+  ↳ app/controllers/api/v1/bills_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.73ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/accounts/43332234/bills/2018-04-08" for 127.0.0.1 at 2018-08-19 22:02:04 -0400
+Processing by Api::V1::BillsController#show_by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.6ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2018-04-08" for 127.0.0.1 at 2018-08-19 22:02:14 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/accounts/43332234/bills/2018-04-08"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/api/v1/accounts/43332234/bills/2018-04-08/pay" for 127.0.0.1 at 2018-08-19 22:02:24 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"paid", "account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{"status"=>"paid"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.8ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/bills_controller.rb:32
+  [1m[36mBill Update (0.6ms)[0m  [1m[33mUPDATE "bills" SET "status" = ?, "updated_at" = ? WHERE "bills"."id" = ?[0m  [["status", "paid"], ["updated_at", "2018-08-20 02:02:35.629408"], ["id", 10]]
+  ↳ app/controllers/api/v1/bills_controller.rb:32
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/bills_controller.rb:32
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 10837ms (Views: 0.6ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2018-04-08/pay" for 127.0.0.1 at 2018-08-19 22:03:07 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 2270ms (Views: 8.5ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2018-04-08/pay" for 127.0.0.1 at 2018-08-19 22:03:18 -0400
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 2010ms (Views: 8.0ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/api/v1/accounts/43332234/bills/2018-04-08/pay" for 127.0.0.1 at 2018-08-19 22:03:31 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#pay_by_month as */*
+  Parameters: {"status"=>"unpaid", "account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{"status"=>"unpaid"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 2002ms (Views: 9.1ms | ActiveRecord: 3.8ms)
+
+
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBill Update (0.4ms)[0m  [1m[33mUPDATE "bills" SET "status" = ?, "updated_at" = ? WHERE "bills"."id" = ?[0m  [["status", "unpaid"], ["updated_at", "2018-08-20 02:04:47.547988"], ["id", 10]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/api/v1/accounts/43332234/bills/2018-04-08" for 127.0.0.1 at 2018-08-19 22:05:11 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::BillsController#show_by_month as */*
+  Parameters: {"account_number"=>"43332234", "start_date"=>"2018-04-08", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."account_id" = ? AND (cast(strftime('%Y', start_date) as int) = '2018' AND cast(strftime('%m', start_date) as int) = '04' ) ORDER BY "bills"."id" ASC LIMIT ?[0m  [["account_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:60
+  [1m[36mCACHE Account Load (0.0ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."account_number" = ? LIMIT ?[0m  [["account_number", "43332234"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/bills_controller.rb:50
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.43ms)
+Completed 200 OK in 45ms (Views: 10.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 22:44:42 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (39.11ms)
+Completed 200 OK in 86ms (Views: 62.6ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 22:46:25 -0400
+Processing by Api::V1::Admin::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"test", "last_name"=>"meh", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Unpermitted parameters: :password, :password_confirmation
+Unpermitted parameters: :password, :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):3
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ (pry):3
+Unpermitted parameters: :password, :password_confirmation
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.19ms)
+Completed 422 Unprocessable Entity in 53900ms (Views: 45.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/api/v1/admin/users" for 127.0.0.1 at 2018-08-19 22:47:33 -0400
+Processing by Api::V1::Admin::UsersController#create as */*
+  Parameters: {"user"=>{"first_name"=>"test", "last_name"=>"meh", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ (pry):6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ (pry):6
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "test"], ["last_name", "meh"], ["created_at", "2018-08-20 02:47:56.013885"], ["updated_at", "2018-08-20 02:47:56.013885"], ["email", "test@gmail.com"], ["encrypted_password", "$2a$11$wmhfL0ieBLQX9nUlKAiZ9OYtzUzABFW5M2FMr1s9Q0ZXD4GmOOnce"]]
+  ↳ (pry):6
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ (pry):6
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:20
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 27513ms (Views: 9.3ms | ActiveRecord: 8.9ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:49:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/admin/users/7"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:50:41 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/admin/users/7"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:50:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/admin/users/7"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:51:47 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#show as */*
+  Parameters: {"id"=>"7", "user"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.7ms)
+Completed 200 OK in 62ms (Views: 36.5ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:52:52 -0400
+Processing by Api::V1::Admin::UsersController#update as */*
+  Parameters: {"user"=>{"first_name"=>"MEHH", "last_name"=>"meh", "email"=>"test@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "first_name" = ?, "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["first_name", "MEHH"], ["encrypted_password", "$2a$11$Rz0O11aqEkLE1Uy7VFTtS.MWt58QOOKedprEFe1P5bU5PGjxqiiKS"], ["updated_at", "2018-08-20 02:52:52.881832"], ["id", 7]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:29
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.91ms)
+Completed 200 OK in 238ms (Views: 2.4ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:52:59 -0400
+Processing by Api::V1::Admin::UsersController#show as */*
+  Parameters: {"id"=>"7", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+[active_model_serializers]   [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:13
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.55ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:54:48 -0400
+Processing by Api::V1::Admin::UsersController#update as */*
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "encrypted_password" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["encrypted_password", "$2a$11$dtzPaCWq5An4PmQhBsnUMOF4PphgaIVbHXi7HXXoJp8EuqxrX.u2i"], ["updated_at", "2018-08-20 02:54:48.390300"], ["id", 7]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:28
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:29
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.74ms)
+Completed 200 OK in 217ms (Views: 2.1ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/v1/auth_user" for 127.0.0.1 at 2018-08-19 22:56:01 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/auth_user"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"user":
+	{	
+		"email": "test@gmail.com"
+	
+		"password":"34234234",
+		
+	}
+  
+}
+Started POST "/api/v1/auth_user" for 127.0.0.1 at 2018-08-19 22:56:14 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/auth_user"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/auth_user" for 127.0.0.1 at 2018-08-19 22:56:58 -0400
+Processing by AuthenticationController#authenticate_user as */*
+  Parameters: {"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}, "authentication"=>{"user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 211ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:57:52 -0400
+Processing by Api::V1::Admin::UsersController#destroy as */*
+  Parameters: {"user"=>{"password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/users_controller.rb:36
+Completed 204 No Content in 12ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/api/v1/admin/users/7" for 127.0.0.1 at 2018-08-19 22:57:58 -0400
+Processing by Api::V1::Admin::UsersController#show as */*
+  Parameters: {"id"=>"7", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=7):
+  
+app/controllers/api/v1/admin/users_controller.rb:48:in `set_user'
+Started GET "/api/v1/admin/users/test@gmail.com" for 127.0.0.1 at 2018-08-19 23:05:08 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#show as 
+  Parameters: {"id"=>"test@gmail", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:48
+Completed 404 Not Found in 18ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=test@gmail):
+  
+app/controllers/api/v1/admin/users_controller.rb:48:in `set_user'
+Started GET "/api/v1/admin/users/find_by_email/test@gmail.com" for 127.0.0.1 at 2018-08-19 23:09:26 -0400
+Processing by Api::V1::Admin::UsersController#email as */*
+  Parameters: {"email"=>"test@gmail.com", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:41
+Completed 404 Not Found in 9370ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User):
+  
+app/controllers/api/v1/admin/users_controller.rb:41:in `email'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/api/v1/admin/users/find_by_email/john.johnson@yahoo.com" for 127.0.0.1 at 2018-08-19 23:10:20 -0400
+Processing by Api::V1::Admin::UsersController#email as */*
+  Parameters: {"email"=>"john.johnson@yahoo.com", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john.johnson@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:41
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:42
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (32.47ms)
+Completed 200 OK in 6972ms (Views: 61.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:13:06 -0400
+Processing by Api::V1::Admin::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.52ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-19 23:15:36 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:41
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.3ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/1/bills" for 127.0.0.1 at 2018-08-19 23:15:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/admin/accounts/1/bills"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/accounts/1/bills" for 127.0.0.1 at 2018-08-19 23:16:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.83ms)
+Completed 200 OK in 36ms (Views: 20.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-19 23:16:42 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:41
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (5.52ms)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/admin/accounts/1/bills" for 127.0.0.1 at 2018-08-19 23:16:52 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.65ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:17:36 -0400
+Processing by Api::V1::Admin::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (8.71ms)
+Completed 200 OK in 34ms (Views: 15.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-19 23:17:43 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:41
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/1/bills" for 127.0.0.1 at 2018-08-19 23:17:47 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"1", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.64ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/admin/accounts/1/bills/2" for 127.0.0.1 at 2018-08-19 23:17:54 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"account_id"=>"1", "id"=>"2", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:41
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.22ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
