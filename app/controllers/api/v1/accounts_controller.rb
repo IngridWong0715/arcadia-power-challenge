@@ -11,7 +11,7 @@ module Api
 
       def show
         twelve_month_averages = Bill.twelve_month_averages
-        customer_bills = prev_twelve_bills_usage(@account)
+        customer_bills = @account.prev_twelve_bills_usage
         comparison = {}
         render json: {account_information: @account,
                       stats: { account_monthly_usage: customer_bills,
@@ -66,17 +66,6 @@ module Api
         params.require(:account).permit(:utility, :category, :account_number, :user_id)
       end
 
-      def prev_twelve_bills_usage(account)
-        bills = {}
-        for i in 0..12 do
-          month = (Date.today - i.month).month
-          year = (Date.today - i.month).year
-          month_year = (Date.today - i.month).strftime("%B %Y")
-          bill = account.bills.by_month(month, year).first
-          bills[month_year] = bill == nil ? nil : bill.usage
-        end
-        bills
-      end
     end
   end
 end

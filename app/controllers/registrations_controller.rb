@@ -1,14 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
   skip_before_action :authenticate_request!
-  before_action :configure_permitted_parameters if :devise_controller? #what does devise_controller do?
+  before_action :configure_permitted_parameters if :devise_controller?
 
   	def create
-      binding.pry
   		build_resource(sign_up_params)
   		resource.save
 
   		if resource.persisted?
-        binding.pry
         payload = payload(resource)
         render json: {message: "signed up with #{resource}", payload: payload}
 
@@ -26,7 +24,6 @@ class RegistrationsController < Devise::RegistrationsController
   		devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name])
   	end
 
-
     def payload(user)
       return nil unless user and user.id
       {
@@ -34,6 +31,4 @@ class RegistrationsController < Devise::RegistrationsController
         user: {id: user.id, email: user.email}
       }
     end
-
-
 end
