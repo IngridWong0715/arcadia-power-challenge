@@ -19,11 +19,11 @@ Rails.application.routes.draw do
 
         resources :accounts
         resources :bills
-        
+
         resources :users
         get '/users/by_email/:email', to: 'users#show_by_email', constraints: { email: /.+@.+/}
         get '/stats/monthly_average_usage/:month/:year', to: 'stats#monthly_average_usage'
-        get '/stats/user_activity', to: 'stats#user_activity'
+        get '/stats/user_activity', to: 'stats#user_activity_breakdown'
         get 'stats/account_breakdown', to: 'stats#account_type_breakdown'
       end
     end

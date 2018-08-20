@@ -2,9 +2,8 @@ module Api
   module V1
     class BillsController < ApplicationController
       before_action :set_bill, only: [ :show_by_month, :pay_by_month ]
-      before_action :set_account, only: [:index, :unpaid_bills, :show_by_month ]
+      before_action :set_account, only: [:index, :unpaid_bills ]
       rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
-
 
       def index
         @bills = @account.bills.all
@@ -21,6 +20,7 @@ module Api
       end
 
       def pay_by_month
+  
         if bill_params(:status)[:status] != "paid"
           render json: { errors: "You can only perform a 'pay' action on a bill" }
         elsif @bill.status == "paid"
@@ -38,9 +38,6 @@ module Api
 
       def set_account
         @account = account
-        unless @account
-          record_not_found
-        end
       end
 
       def account

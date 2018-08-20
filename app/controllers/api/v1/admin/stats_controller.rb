@@ -6,14 +6,18 @@ module Api
         render json: {"Average usage for #{params[:month]}/#{params[:year]}": average}
       end
 
-      def user_activity
+      def user_activity_breakdown
         total_user_count = User.count
+        active_count = User.active
+        inactive_count = User.inactive
         active_percentage = User.active_percentage
         inactive_percentage = User.inactive_percentage
         render json: {
           "Total User Count:": total_user_count,
-          "Active User:": active_percentage,
-          "Inactive User:": inactive_percentage
+          "Total Active Count:": active_count,
+          "Total Inactive Count:": inactive_count,
+          "Active Percentage:": active_percentage,
+          "Inactive Percentage:": inactive_percentage
         }
       end
 
@@ -26,8 +30,8 @@ module Api
 
         render json: {
           "Total Account Count:": total_account_count,
-          "Total Residential Accounts:": residential_count,
-          "Total Commercial Accounts:": commercial_count,
+          "Total Residential Count:": residential_count,
+          "Total Commercial Count:": commercial_count,
           "Residential Percentage:": residential_percentage,
           "Commercial Percentage:": commercial_percentage
         }
