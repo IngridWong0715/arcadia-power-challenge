@@ -1,4 +1,6 @@
 class Account < ApplicationRecord
+  extend CalculatePercentage
+  
   belongs_to :user
   has_many :bills
   validates :utility, :category, :account_number, presence: true

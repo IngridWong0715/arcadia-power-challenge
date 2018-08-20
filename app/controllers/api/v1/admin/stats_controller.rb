@@ -3,7 +3,7 @@ module Api
     class Admin::StatsController < AdminController
       def monthly_average_usage
         average = Bill.monthly_average_usage(params[:month], params[:year])
-        render json: {"Average for #{params[:month]}  #{params[:year]}": average}
+        render json: {"Average usage for #{params[:month]}/#{params[:year]}": average}
       end
 
       def user_activity
@@ -18,16 +18,18 @@ module Api
       end
 
       def account_type_breakdown
+        total_account_count = Account.count
         residential_count = Account.residential.count
         residential_percentage = Account.residential_type_percentage
         commercial_count = Account.commercial.count
         commercial_percentage = Account.commercial_type_percentage
 
         render json: {
+          "Total Account Count:": total_account_count,
           "Total Residential Accounts:": residential_count,
-          "Residential Percentage:": residential_percentage,
           "Total Commercial Accounts:": commercial_count,
-          "Residential Percentage:": residential_percentage
+          "Residential Percentage:": residential_percentage,
+          "Commercial Percentage:": commercial_percentage
         }
       end
     end
