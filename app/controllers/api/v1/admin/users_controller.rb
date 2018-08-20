@@ -14,11 +14,10 @@ module Api
       end
 
       def create
-        binding.pry
         @user = User.new(user_params)
 
         if @user.save
-          render json: @user, status: :created, location: @user
+          render json: @user, status: :created
         else
           render json: @user.errors, status: :unprocessable_entity
         end
@@ -36,8 +35,7 @@ module Api
         @user.destroy
       end
 
-      def email
-        binding.pry
+      def show_by_email
         @user = User.find_by_email! params[:email]
         render json: @user
       end

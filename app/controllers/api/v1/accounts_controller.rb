@@ -55,7 +55,7 @@ module Api
       end
 
       def account_url(account)
-        "localhost:/3000/api/v1/accounts/#{account.id}"
+        "localhost:3000/api/v1/accounts/#{account.account_number}"
       end
 
       def record_not_found

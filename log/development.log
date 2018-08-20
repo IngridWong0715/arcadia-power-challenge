@@ -11359,3 +11359,879 @@ Processing by Api::V1::Admin::BillsController#show as */*
 Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/api/v1/admin/users/by_email/john.johnson@yahoo.com" for 127.0.0.1 at 2018-08-19 23:22:17 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::UsersController#show_by_email as */*
+  Parameters: {"email"=>"john.johnson@yahoo.com", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john.johnson@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:39
+[active_model_serializers]   [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:40
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (27.71ms)
+Completed 200 OK in 97ms (Views: 52.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/admin/users/find_by_email/john.johnson@yahoo.com" for 127.0.0.1 at 2018-08-19 23:23:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/admin/users/find_by_email/john.johnson@yahoo.com"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/admin/users/by_email/john.johnson@yahoo.com" for 127.0.0.1 at 2018-08-19 23:23:39 -0400
+Processing by Api::V1::Admin::UsersController#show_by_email as */*
+  Parameters: {"email"=>"john.johnson@yahoo.com", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "john.johnson@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/users_controller.rb:39
+[active_model_serializers]   [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts" WHERE "accounts"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/users_controller.rb:40
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.26ms)
+Completed 200 OK in 54ms (Views: 37.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/v1/admin/accounts/1/bills/2" for 127.0.0.1 at 2018-08-19 23:23:54 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"account_id"=>"1", "id"=>"2", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:41
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.36ms)
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-19 23:23:59 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:41
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (2.04ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:24:54 -0400
+Processing by Api::V1::Admin::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.42ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:27:47 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+       
+        "utility": "MEH",
+        "category": "residential",
+        "account_number": "123423423"
+        "user_id": 1
+}
+  
+ActionDispatch::Http::Parameters::ParseError (751: unexpected token at '{
+       
+        "utility": "MEH",
+        "category": "residential",
+        "account_number": "123423423"
+        "user_id": 1
+}'):
+  
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch'
+rack (2.0.5) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.2.0) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.0) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.0) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.0) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.0) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.0) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.0) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.0) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.0) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+activerecord (5.2.0) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.0) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.0) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:27:57 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mAccount Create (0.5ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 1], ["created_at", "2018-08-20 03:27:57.073537"], ["updated_at", "2018-08-20 03:27:57.073537"]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 7.1ms)
+
+
+  
+NoMethodError (undefined method `account_url' for #<Api::V1::Admin::AccountsController:0x00007fd4a7dcd9c0>):
+  
+app/controllers/api/v1/admin/accounts_controller.rb:20:in `create'
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:29:18 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 1], ["created_at", "2018-08-20 03:29:18.210639"], ["updated_at", "2018-08-20 03:29:18.210639"]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 201 Created in 29ms (Views: 3.1ms | ActiveRecord: 2.9ms)
+
+
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:19 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 1], ["created_at", "2018-08-20 03:31:19.783685"], ["updated_at", "2018-08-20 03:31:19.783685"]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:19
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.29ms)
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:25
+Completed 500 Internal Server Error in 37ms (Views: 2.8ms | ActiveRecord: 3.3ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/admin/accounts_controller.rb:34:in `create'
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:35 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>1}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+Completed 200 OK in 38ms (Views: 11.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:41 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:21
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:21
+  [1m[36mAccount Create (0.3ms)[0m  [1m[32mINSERT INTO "accounts" ("utility", "category", "account_number", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["created_at", "2018-08-20 03:31:41.350621"], ["updated_at", "2018-08-20 03:31:41.350621"]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:21
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:21
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.61ms)
+Completed 201 Created in 14ms (Views: 3.1ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:43 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:46 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:52 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:54 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:55 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:31:56 -0400
+Processing by Api::V1::Admin::AccountsController#create as */*
+  Parameters: {"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "account"=>{"utility"=>"MEH", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."utility" = ? AND "accounts"."category" = ? AND "accounts"."account_number" = ? AND "accounts"."user_id" = ? LIMIT ?[0m  [["utility", "MEH"], ["category", "residential"], ["account_number", "123423423"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:18
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:32:45 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/admin/accounts"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PATCH "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:33:26 -0400
+Processing by Api::V1::Admin::AccountsController#update as */*
+  Parameters: {"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "id"=>"26", "account"=>{"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.4ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:31
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:31
+  [1m[36mAccount Update (0.3ms)[0m  [1m[33mUPDATE "accounts" SET "utility" = ?, "updated_at" = ? WHERE "accounts"."id" = ?[0m  [["utility", "HEE"], ["updated_at", "2018-08-20 03:33:26.822760"], ["id", 26]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:31
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:31
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.48ms)
+Completed 200 OK in 30ms (Views: 2.9ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:33:32 -0400
+Processing by Api::V1::Admin::AccountsController#destroy as */*
+  Parameters: {"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "id"=>"26", "account"=>{"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+  [1m[36mAccount Destroy (0.3ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = ?[0m  [["id", 26]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+Completed 204 No Content in 9ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:33:36 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"26", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+Started GET "/api/v1/admin/accounts/25" for 127.0.0.1 at 2018-08-19 23:33:58 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"25", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.62ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/v1/admin/accounts/25" for 127.0.0.1 at 2018-08-19 23:34:04 -0400
+Processing by Api::V1::Admin::AccountsController#destroy as */*
+  Parameters: {"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "id"=>"25", "account"=>{"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+  [1m[36mAccount Destroy (0.3ms)[0m  [1m[31mDELETE FROM "accounts" WHERE "accounts"."id" = ?[0m  [["id", 25]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:39
+Completed 204 No Content in 9ms (ActiveRecord: 6.5ms)
+
+
+Started DELETE "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:49:26 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ingridooo/.rvm/gems/ruby-2.4.2/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::Admin::AccountsController#destroy as */*
+  Parameters: {"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2, "id"=>"26", "account"=>{"utility"=>"HEE", "category"=>"residential", "account_number"=>"123423423", "user_id"=>2}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.6ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 200 OK in 37ms (Views: 12.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:49:34 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"26", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/admin/accounts/26" for 127.0.0.1 at 2018-08-19 23:50:07 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"26", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" ORDER BY "accounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAccount Load (0.3ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-19 23:50:52 -0400
+Processing by Api::V1::Admin::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (17.31ms)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-19 23:51:00 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.25ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/admin/accounts/2" for 127.0.0.1 at 2018-08-19 23:51:04 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"2", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.35ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/3" for 127.0.0.1 at 2018-08-19 23:51:07 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"3", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.06ms)
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/admin/accounts/4" for 127.0.0.1 at 2018-08-19 23:51:10 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"4", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.54ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/6/bills" for 127.0.0.1 at 2018-08-19 23:51:16 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"6", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (7.26ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/v1/admin/accounts/6/bills/2" for 127.0.0.1 at 2018-08-19 23:51:22 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"account_id"=>"6", "id"=>"2", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:41
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/2" for 127.0.0.1 at 2018-08-19 23:51:28 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"2", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.14ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/admin/accounts/2/bills" for 127.0.0.1 at 2018-08-19 23:51:40 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"2", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.99ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/admin/accounts/4/bills" for 127.0.0.1 at 2018-08-19 23:51:44 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"4", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT "bills".* FROM "bills"[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.72ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts" for 127.0.0.1 at 2018-08-20 10:17:28 -0400
+Processing by Api::V1::Admin::AccountsController#index as */*
+  Parameters: {"account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:9
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.74ms)
+Completed 200 OK in 56ms (Views: 33.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/v1/admin/accounts/1" for 127.0.0.1 at 2018-08-20 10:17:34 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"1", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers]   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/admin/accounts_controller.rb:13
+[active_model_serializers] Rendered AccountSerializer with ActiveModelSerializers::Adapter::Attributes (1.56ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/admin/accounts/123/bills" for 127.0.0.1 at 2018-08-20 10:19:25 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"123", "bill"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `find!' for #<Class:0x00007fa9fcd1c9c0>
+Did you mean?  find):
+  
+app/controllers/api/v1/admin/bills_controller.rb:50:in `account'
+app/controllers/api/v1/admin/bills_controller.rb:46:in `set_account'
+Started GET "/api/v1/admin/accounts/123/bills" for 127.0.0.1 at 2018-08-20 10:19:56 -0400
+Processing by Api::V1::Admin::BillsController#index as */*
+  Parameters: {"account_id"=>"123", "bill"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.2ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 59ms (Views: 33.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/v1/admin/accounts/123" for 127.0.0.1 at 2018-08-20 10:20:24 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"123", "account"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 123], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/admin/accounts/123143241" for 127.0.0.1 at 2018-08-20 10:20:33 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"123143241", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 123143241], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/admin/accounts/123143241234" for 127.0.0.1 at 2018-08-20 10:20:35 -0400
+Processing by Api::V1::Admin::AccountsController#show as */*
+  Parameters: {"id"=>"123143241234", "account"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 123143241234], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/accounts_controller.rb:45
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/admin/bills/12345" for 127.0.0.1 at 2018-08-20 10:25:54 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"id"=>"12345", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 12345], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:42
+Completed 404 Not Found in 14ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=12345):
+  
+app/controllers/api/v1/admin/bills_controller.rb:42:in `set_bill'
+Started POST "/api/v1/admin/bills" for 127.0.0.1 at 2018-08-20 10:32:27 -0400
+Processing by Api::V1::Admin::BillsController#create as */*
+  Parameters: {"start_date"=>"2018-02-02", "bill"=>{"start_date"=>"2018-02-02"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? LIMIT ?[0m  [["start_date", "2018-02-02"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.09ms)
+Completed 422 Unprocessable Entity in 52ms (Views: 10.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/v1/admin/bills" for 127.0.0.1 at 2018-08-20 10:33:32 -0400
+Processing by Api::V1::Admin::BillsController#create as */*
+  Parameters: {"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "bill"=>{"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.3ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? AND "bills"."end_date" = ? AND "bills"."usage" = ? AND "bills"."charges" = ? AND "bills"."status" = ? LIMIT ?[0m  [["start_date", "2018-02-02"], ["end_date", "2018-03-02"], ["usage", 14], ["charges", 20.0], ["status", "unpaid"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/admin/bills" for 127.0.0.1 at 2018-08-20 10:33:41 -0400
+Processing by Api::V1::Admin::BillsController#create as */*
+  Parameters: {"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"1", "bill"=>{"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? AND "bills"."end_date" = ? AND "bills"."usage" = ? AND "bills"."charges" = ? AND "bills"."status" = ? AND "bills"."account_id" = ? LIMIT ?[0m  [["start_date", "2018-02-02"], ["end_date", "2018-03-02"], ["usage", 14], ["charges", 20.0], ["status", "unpaid"], ["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+  [1m[36mBill Create (0.5ms)[0m  [1m[32mINSERT INTO "bills" ("start_date", "end_date", "usage", "charges", "status", "account_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_date", "2018-02-02"], ["end_date", "2018-03-02"], ["usage", 14], ["charges", 20.0], ["status", "unpaid"], ["account_id", 1], ["created_at", "2018-08-20 14:33:41.883360"], ["updated_at", "2018-08-20 14:33:41.883360"]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:19
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 8.5ms)
+
+
+  
+NoMethodError (undefined method `bill_url' for #<Api::V1::Admin::BillsController:0x00007fa9fdc09280>):
+  
+app/controllers/api/v1/admin/bills_controller.rb:20:in `create'
+Started POST "/api/v1/admin/bills" for 127.0.0.1 at 2018-08-20 10:36:46 -0400
+Processing by Api::V1::Admin::BillsController#create as */*
+  Parameters: {"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"1", "bill"=>{"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"1"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."start_date" = ? AND "bills"."end_date" = ? AND "bills"."usage" = ? AND "bills"."charges" = ? AND "bills"."status" = ? AND "bills"."account_id" = ? LIMIT ?[0m  [["start_date", "2018-02-02"], ["end_date", "2018-03-02"], ["usage", 14], ["charges", 20.0], ["status", "unpaid"], ["account_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:16
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:52
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 60ms (Views: 28.3ms | ActiveRecord: 2.1ms)
+
+
+Started PATCH "/api/v1/admin/bills" for 127.0.0.1 at 2018-08-20 10:37:21 -0400
+  
+ActionController::RoutingError (No route matches [PATCH] "/api/v1/admin/bills"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" ORDER BY "bills"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started PATCH "/api/v1/admin/bills/32" for 127.0.0.1 at 2018-08-20 10:37:51 -0400
+Processing by Api::V1::Admin::BillsController#update as */*
+  Parameters: {"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"2", "id"=>"32", "bill"=>{"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.2ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:30
+  [1m[36mAccount Load (0.1ms)[0m  [1m[34mSELECT  "accounts".* FROM "accounts" WHERE "accounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:30
+  [1m[36mBill Update (0.4ms)[0m  [1m[33mUPDATE "bills" SET "account_id" = ?, "updated_at" = ? WHERE "bills"."id" = ?[0m  [["account_id", 2], ["updated_at", "2018-08-20 14:37:51.629565"], ["id", 32]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:30
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:30
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.23ms)
+Completed 200 OK in 31ms (Views: 17.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/api/v1/admin/bills/32" for 127.0.0.1 at 2018-08-20 10:37:58 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"id"=>"32", "bill"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:44
+[active_model_serializers] Rendered BillSerializer with ActiveModelSerializers::Adapter::Attributes (0.21ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/v1/admin/bills/32" for 127.0.0.1 at 2018-08-20 10:38:18 -0400
+Processing by Api::V1::Admin::BillsController#destroy as */*
+  Parameters: {"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"2", "id"=>"32", "bill"=>{"start_date"=>"2018-02-02", "end_date"=>"2018-03-02", "usage"=>"14", "charges"=>"20", "status"=>"unpaid", "account_id"=>"2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:38
+  [1m[36mBill Destroy (0.3ms)[0m  [1m[31mDELETE FROM "bills" WHERE "bills"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:38
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:38
+Completed 204 No Content in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/admin/bills/32" for 127.0.0.1 at 2018-08-20 10:38:22 -0400
+Processing by Api::V1::Admin::BillsController#show as */*
+  Parameters: {"id"=>"32", "bill"=>{}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mBill Load (0.1ms)[0m  [1m[34mSELECT  "bills".* FROM "bills" WHERE "bills"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/admin/bills_controller.rb:44
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Bill with 'id'=32):
+  
+app/controllers/api/v1/admin/bills_controller.rb:44:in `set_bill'

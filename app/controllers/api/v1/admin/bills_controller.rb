@@ -2,7 +2,6 @@ module Api
   module V1
     class Admin::BillsController < AdminController
       before_action :set_bill, only: [:show, :update, :destroy]
-      rescue_from ::ActiveRecord::RecordNotFound, with: :record_not_found
 
       def index
         @bills = Bill.all
@@ -14,12 +13,16 @@ module Api
       end
 
       def create
-        @bill = Bill.new(bill_params)
+        @bill = Bill.find_or_initialize_by(bill_params)
 
-        if @bill.save
-          render json: @bill, status: :created, location: @bill
+        if @bill.new_record?
+          if @bill.save
+            render json: @bill, status: :created, location: @bill
+          else
+            render json: @bill.errors, status: :unprocessable_entity
+          end
         else
-          render json: @bill.errors, status: :unprocessable_entity
+          render json: {errors: "bill already exists", bill: @bill}, location: @bill
         end
       end
 
@@ -41,13 +44,12 @@ module Api
         @bill = Bill.find(params[:id])
       end
 
-    
-      def record_not_found
-        render json: {"Access Prohibited": "You don't have access to this bill"}
-      end
-
       def bill_params
         params.require(:bill).permit(:start_date, :end_date, :usage, :charges, :status, :account_id)
+      end
+
+      def bill_url(bill)
+        "localhost:3000/api/v1/accounts/#{bill.account.account_number}/bills/#{bill.id}"
       end
     end
   end
