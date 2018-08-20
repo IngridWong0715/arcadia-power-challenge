@@ -41,8 +41,14 @@ module Api
       end
 
       def destroy
-        @account.destroy
-        render json: {message: "account successfully deleted"}
+        unpaid_bills = @account.bills.unpaid
+
+        if unpaid_bills == []
+          @account.destroy
+          render json: {message: "account successfully deleted"}
+        else
+          render json: {errors: "Account not deleted: You cannot have unpaid bills", unpaid_bills: unpaid_bills}
+        end
       end
 
       private
